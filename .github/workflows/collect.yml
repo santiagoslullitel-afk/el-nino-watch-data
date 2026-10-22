@@ -56,7 +56,7 @@ jobs:
       - name: Publish to the "data" branch
         run: |
           mkdir out
-          cp work/auto.json work/accu_keys.json out/
+          cp work/auto.json work/auto_prev.json work/accu_keys.json out/
           if [ -d work/sat ]; then cp -r work/sat out/; fi
           cd out
           git init -q -b data
