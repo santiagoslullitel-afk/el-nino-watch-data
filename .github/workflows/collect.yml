@@ -1,0 +1,67 @@
+name: El Nino collector
+
+on:
+  schedule:
+    - cron: "15 5 * * *"   # 05:15 UTC = 7:15 Madrid en verano, 6:15 en invierno
+  workflow_dispatch:        # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+concurrency: collector
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install shapely
+        run: pip install shapely
+
+      - name: Prepare working folder (with yesterday's data)
+        run: |
+          mkdir -p work
+          cp data/*.json data/*.geojson work/
+          if git fetch --depth=1 origin data:refs/remotes/origin/data; then
+            git show origin/data:auto.json > work/auto.json || true
+            git show origin/data:accu_keys.json > work/accu_keys.json || true
+          fi
+          cp work/auto.json work/auto_prev.json
+
+      - name: Collect live data
+        env:
+          FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
+          ACCU_KEY: ${{ secrets.ACCU_KEY }}
+        run: cd collector && python3 collect.py --base ../work --prev ../work/auto_prev.json
+
+      - name: Check enough sources worked
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          a = json.load(open("work/auto.json"))
+          s = a.get("sources", {})
+          ok = [n for n, v in s.items() if v.get("ok")]
+          bad = [n for n, v in s.items() if not v.get("ok")]
+          print("OK:", ok); print("FAILED:", bad)
+          if len(ok) < 5:
+              sys.exit("Fewer than 5 sources worked: not publishing")
+          PY
+
+      - name: Publish to the "data" branch
+        run: |
+          mkdir out
+          cp work/auto.json work/accu_keys.json out/
+          if [ -d work/sat ]; then cp -r work/sat out/; fi
+          cd out
+          git init -q -b data
+          git config user.name "el-nino-bot"
+          git config user.email "el-nino-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Live data $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" data
