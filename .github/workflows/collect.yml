@@ -27,7 +27,7 @@ jobs:
       - name: Prepare working folder (with yesterday's data)
         run: |
           mkdir -p work
-          cp data/*.json data/*.geojson work/
+          cp *.json *.geojson work/
           if git fetch --depth=1 origin data:refs/remotes/origin/data; then
             git show origin/data:auto.json > work/auto.json || true
             git show origin/data:accu_keys.json > work/accu_keys.json || true
@@ -38,7 +38,7 @@ jobs:
         env:
           FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
           ACCU_KEY: ${{ secrets.ACCU_KEY }}
-        run: cd collector && python3 collect.py --base ../work --prev ../work/auto_prev.json
+        run: python3 collect.py --base work --prev work/auto_prev.json
 
       - name: Check enough sources worked
         run: |
