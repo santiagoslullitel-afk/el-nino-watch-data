@@ -2,7 +2,7 @@ name: El Nino collector
 
 on:
   schedule:
-    - cron: "15 5 * * *"   # 05:15 UTC = 7:15 Madrid en verano, 6:15 en invierno
+    - cron: "30 4 * * *"   # 04:30 UTC = 6:30 Madrid en verano, 5:30 en invierno
   workflow_dispatch:        # botón "Run workflow" para lanzarlo a mano
 
 permissions:
