@@ -1,0 +1,1137 @@
+<title>El Niño Watch 2026–27</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: search first, then a big night-sky globe beside a "your area" panel, then a timeline of what is coming.
+   Colour carries meaning: blues = too much water, ambers to reds = too little water, heat, fire or haze. */
+:root {
+  --bg: #edf2f4;
+  --surface: #ffffff;
+  --surface-2: #e5ecef;
+  --line: #d2dce0;
+  --fg: #0c1c23;
+  --muted: #55707a;
+  --accent: #0e6a8d;
+  --space-1: #030c16;
+  --space-2: #0b2135;
+  --wet1: #9fd0ff; --wet2: #59a6f2; --wet3: #2b6fdb; --wet4: #1b3fa6;
+  --dry1: #ffd56e; --dry2: #ffa047; --dry3: #ec5a2a; --dry4: #c21f2f;
+  --sev-red: #d7263d; --sev-orange: #f08a24; --sev-yellow: #f2c230;
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071117; --surface: #0d1b22; --surface-2: #13262e; --line: #20353e;
+    --fg: #e3edf0; --muted: #8ba4ac; --accent: #66bbdc;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #071117; --surface: #0d1b22; --surface-2: #13262e; --line: #20353e;
+  --fg: #e3edf0; --muted: #8ba4ac; --accent: #66bbdc;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 22px 44px;
+}
+.wrap { max-width: 1340px; margin: 0 auto; display: grid; gap: 18px; }
+.wrap > * { min-width: 0; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+.label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+button { font-family: inherit; }
+
+/* Header */
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; }
+.brand h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; font-stretch: 115%; letter-spacing: -.015em; line-height: .95; }
+.brand h1 .w { background: linear-gradient(90deg, var(--wet3), var(--dry3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand p { margin: 8px 0 0; color: var(--muted); max-width: 60ch; }
+.strength { display: grid; gap: 6px; min-width: 240px; }
+.meter { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
+.meter i { height: 8px; border-radius: 2px; background: var(--surface-2); }
+.meter i.on { background: var(--dry3); }
+.meter i.on:nth-child(-n+2) { background: var(--dry1); }
+.meter i.on:nth-child(3) { background: var(--dry2); }
+.meter-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+.strength strong { font-family: var(--font-display); font-size: 20px; font-stretch: 100%; }
+.strength .sub { font-size: 13px; color: var(--muted); }
+
+/* Search */
+.finder { position: relative; display: grid; gap: 10px; }
+.searchbox { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 6px 4px 18px; }
+.searchbox svg { flex: none; color: var(--muted); }
+#q { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font: 500 17px var(--font-body); padding: 12px 0; outline: none; }
+#q::placeholder { color: var(--muted); font-weight: 400; }
+.results { position: absolute; top: 60px; left: 0; right: 0; z-index: 20; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; list-style: none; margin: 0; padding: 6px; box-shadow: 0 12px 40px rgba(0,0,0,.18); max-height: 360px; overflow-y: auto; }
+.results li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 8px; cursor: pointer; }
+.results li[aria-selected="true"], .results li:hover { background: var(--surface-2); }
+.results .kind { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.quick { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.quick span { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.chip { font: 500 13px var(--font-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.chip:hover { border-color: var(--muted); }
+
+/* Main */
+.main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+.globe-panel { position: relative; border-radius: var(--radius); overflow: hidden; background: radial-gradient(120% 90% at 50% 45%, var(--space-2) 0%, var(--space-1) 70%); min-height: 420px; }
+#globe { width: 100%; height: 700px; cursor: grab; }
+#globe:active { cursor: grabbing; }
+.overlay { position: absolute; display: flex; gap: 6px; flex-wrap: wrap; z-index: 10; }
+.regions { top: 14px; left: 14px; }
+.rbtn { font: 500 13px var(--font-body); color: #dce8ee; background: rgba(8, 24, 38, .7); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 6px 12px; cursor: pointer; backdrop-filter: blur(6px); }
+.rbtn[aria-pressed="true"] { background: #e8f1f5; color: #06131c; border-color: #e8f1f5; }
+.newpill { top: 14px; right: 14px; align-items: center; gap: 8px; font: 600 13px var(--font-body); color: #fff; background: var(--sev-red); border: 0; border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: blink 1.4s infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.legend { left: 14px; bottom: 14px; right: 14px; justify-content: space-between; align-items: end; pointer-events: none; color: #cfdde3; font-size: 12px; }
+.legend .box { background: rgba(5, 18, 30, .72); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 10px 12px; display: grid; gap: 6px; backdrop-filter: blur(6px); }
+.legend .ttl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #9fb6bf; font-weight: 600; }
+.ramp-row { display: grid; grid-template-columns: 118px auto; gap: 8px; align-items: center; }
+.ramp { display: flex; gap: 2px; }
+.ramp i { width: 20px; height: 8px; display: block; border-radius: 1px; }
+.lv { display: flex; justify-content: space-between; width: 88px; color: #9fb6bf; font-size: 10px; margin-left: 126px; }
+.icons { display: grid; grid-template-columns: repeat(2, auto); gap: 4px 10px; justify-content: start; }
+.icons .ttl { grid-column: 1 / -1; }
+.icons span { display: inline-flex; align-items: center; gap: 4px; }
+.icons svg { width: 14px; height: 14px; }
+
+/* Markers */
+.mk { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; pointer-events: auto; transform: translate(-50%, -50%); position: relative; box-shadow: 0 0 0 2px rgba(255,255,255,.9), 0 2px 8px rgba(0,0,0,.45); }
+.mk svg { width: 14px; height: 14px; }
+.mk.new::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid currentColor; animation: ring 1.8s ease-out infinite; }
+@keyframes ring { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(1.7); opacity: 0; } }
+.pin { transform: translate(-50%, -100%); pointer-events: none; display: grid; justify-items: center; }
+.pin b { background: #fff; color: #06131c; font: 600 12px var(--font-body); padding: 3px 8px; border-radius: 6px; white-space: nowrap; box-shadow: 0 2px 10px rgba(0,0,0,.4); }
+.pin i { width: 2px; height: 14px; background: #fff; }
+.tip { background: rgba(6, 18, 28, .92); color: #e8f1f5; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; padding: 8px 10px; font: 13px/1.4 var(--font-body); max-width: 240px; }
+.tip b { font-family: var(--font-display); font-size: 14px; }
+.tip span { color: #9fb6bf; }
+
+/* Side panel */
+.side { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; height: 700px; overflow: hidden; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); flex: none; }
+.tab { flex: 1; background: none; border: 0; border-bottom: 2px solid transparent; padding: 13px 10px; font: 600 14px var(--font-body); color: var(--muted); cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--fg); }
+.pane { overflow-y: auto; flex: 1; min-height: 0; }
+.list { list-style: none; margin: 0; padding: 0; }
+.group-h { padding: 10px 16px 6px; background: var(--surface-2); position: sticky; top: 0; z-index: 1; }
+.zrow { display: grid; grid-template-columns: 6px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.zrow:hover { background: var(--surface-2); }
+.zrow .sw { align-self: stretch; border-radius: 3px; }
+.zrow .n { font-weight: 600; }
+.zrow .c { font-size: 13px; color: var(--muted); }
+.lvl { font: 600 11px var(--font-mono); padding: 4px 8px; border-radius: 5px; white-space: nowrap; color: #0b1a22; }
+.lvl.light { color: #fff; }
+.aitem { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; padding: 13px 16px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.aitem:hover { background: var(--surface-2); }
+.aitem .ic { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; }
+.aitem .ic svg { width: 14px; height: 14px; }
+.aitem .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: var(--muted); align-items: center; }
+.aitem h3 { font: 600 15px/1.35 var(--font-body); margin: 2px 0; }
+.aitem p { margin: 0; font-size: 13px; color: var(--muted); }
+.aitem .more { color: var(--fg); margin-top: 4px; }
+.newtag { background: var(--sev-red); color: #fff; font: 600 10px var(--font-mono); letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; }
+.empty { padding: 18px 16px; color: var(--muted); }
+
+/* Area card */
+.card { padding: 18px; display: grid; gap: 18px; }
+.back { justify-self: start; background: none; border: 0; color: var(--accent); font: 500 13px var(--font-body); cursor: pointer; padding: 0; }
+.card h2 { font-size: 30px; font-weight: 800; font-stretch: 108%; line-height: 1.05; }
+.status-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.effect { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; }
+.verdict { border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+.sec { display: grid; gap: 8px; }
+.sec > h3 { font: 600 11px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.sec p { margin: 0; }
+.next { list-style: none; margin: 0; padding: 0; }
+.next li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+.next li:first-child { border-top: 0; }
+.next b { font: 600 13px var(--font-mono); color: var(--fg); }
+.prep { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.srcs { display: flex; flex-wrap: wrap; gap: 8px; }
+.srcs a { font-size: 13px; background: var(--surface-2); border-radius: 6px; padding: 5px 10px; text-decoration: none; }
+
+/* Timeline */
+.coming { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 0 10px; }
+.coming header { padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; align-items: baseline; }
+.coming h2 { font-size: 22px; font-weight: 700; }
+.coming header p { margin: 0; color: var(--muted); font-size: 14px; }
+.track { overflow-x: auto; padding: 0 20px 14px; scroll-snap-type: x proximity; }
+.steps { display: grid; grid-auto-flow: column; grid-auto-columns: 200px; list-style: none; margin: 0; padding: 0; }
+.step { position: relative; padding: 26px 18px 4px 0; scroll-snap-align: start; }
+.step::before { content: ""; position: absolute; top: 9px; left: 0; right: 0; height: 2px; background: var(--line); }
+.step::after { content: ""; position: absolute; top: 3px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 2px solid var(--muted); }
+.step.next::after { border-color: var(--dry3); }
+.step.past::after { background: var(--muted); }
+.step.now::after { background: var(--dry3); border-color: var(--dry3); box-shadow: 0 0 0 5px color-mix(in srgb, var(--dry3) 25%, transparent); }
+.step.next::before { background: repeating-linear-gradient(90deg, var(--dry2) 0 6px, transparent 6px 11px); }
+.step.now h3 { color: var(--dry3); }
+.step button { all: unset; cursor: pointer; display: grid; gap: 2px; }
+.step button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.step > div { display: grid; gap: 2px; }
+.step time { font: 500 12px var(--font-mono); color: var(--muted); }
+.step h3 { font: 600 14px/1.3 var(--font-body); }
+.step p { margin: 0; font-size: 13px; color: var(--muted); }
+.step .where { font-size: 12px; color: var(--accent); }
+
+/* Method */
+.method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; padding-top: 6px; }
+.method section { min-width: 0; }
+.method h2 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.method p { font-size: 14px; color: var(--muted); max-width: 62ch; margin: 0 0 8px; }
+
+/* Layers panel and live data */
+.layers { display: block; top: 56px; right: 14px; max-height: calc(100% - 70px); overflow-y: auto; background: rgba(5, 18, 30, .78); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 8px 12px; color: #dce8ee; font-size: 12px; backdrop-filter: blur(6px); width: 200px; }
+.layers summary { cursor: pointer; font-weight: 600; font-size: 12px; list-style: none; display: flex; justify-content: space-between; }
+.layers summary::-webkit-details-marker { display: none; }
+.layers summary::after { content: "▾"; color: #9fb6bf; }
+.layers:not([open]) summary::after { content: "▸"; }
+.lyr { display: grid; gap: 7px; margin-top: 8px; }
+.lyr .ttl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #9fb6bf; font-weight: 600; margin-top: 2px; }
+.lyr label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.lyr input { accent-color: #7cc4ff; margin: 0; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.seg button { font: 500 12px var(--font-body); color: #dce8ee; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: 5px 6px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: #e8f1f5; color: #06131c; border-color: #e8f1f5; }
+.seg button:disabled { opacity: .4; cursor: default; }
+.lyr .when { color: #9fb6bf; font-size: 11px; line-height: 1.35; }
+.mk.warn { border-radius: 6px; width: 20px; height: 20px; box-shadow: 0 0 0 1.5px rgba(255,255,255,.85), 0 2px 6px rgba(0,0,0,.4); }
+.mk.warn svg { width: 12px; height: 12px; }
+.livetag { background: var(--accent); color: var(--surface); font: 600 10px var(--font-mono); letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; }
+.fc { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.fc > div { display: grid; justify-items: center; gap: 3px; font-size: 11px; color: var(--muted); }
+.fc .bw { height: 64px; width: 100%; display: flex; align-items: flex-end; justify-content: center; background: var(--surface-2); border-radius: 4px; }
+.fc .b { display: block; width: 60%; background: var(--wet2); border-radius: 3px 3px 0 0; min-height: 2px; }
+.fc .mm { color: var(--fg); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.fc .t { font-family: var(--font-mono); }
+.flags { display: flex; flex-wrap: wrap; gap: 6px; }
+.flag { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 5px; background: var(--surface-2); }
+.wlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.wlist li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; font-size: 14px; }
+.wlist .ic { width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; }
+.wlist svg { width: 12px; height: 12px; }
+.wlist small { display: block; color: var(--muted); font-size: 12px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.note b { color: var(--fg); }
+.live h2 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.livesrc { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.livesrc span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; background: var(--muted); }
+.livesrc .ok::before { background: #3fb37f; }
+.livesrc .err::before { background: var(--sev-red); }
+
+/* Scope bar, source links, severity-sized markers */
+.scope { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; padding: 10px 16px; background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: 13px; flex: none; }
+.scope b { font-weight: 600; }
+.scope button { background: none; border: 1px solid var(--line); border-radius: 999px; color: var(--accent); font: 500 12px var(--font-body); padding: 4px 10px; cursor: pointer; background: var(--surface); }
+.tab[hidden], .scope[hidden] { display: none; }
+.tab .n { font: 500 11px var(--font-mono); color: var(--muted); margin-left: 4px; }
+.src { font-size: 12px; }
+.src a { white-space: nowrap; }
+.why { font-size: 12px; color: var(--fg); margin-top: 2px; }
+.why i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
+.selt { font: 600 10px var(--font-mono); letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; background: var(--fg); color: var(--surface); margin-left: 6px; vertical-align: 2px; }
+.step .src { margin-top: 4px; }
+.coming header .scopenote { color: var(--fg); font-weight: 600; }
+.coming header button { background: none; border: 0; color: var(--accent); font: 500 13px var(--font-body); cursor: pointer; padding: 0; margin-left: 6px; }
+.mk.s-red { width: 32px; height: 32px; z-index: 3; }
+.mk.s-red svg { width: 18px; height: 18px; }
+.mk.s-orange { width: 25px; height: 25px; z-index: 2; }
+.mk.s-yellow { width: 18px; height: 18px; z-index: 1; opacity: .9; }
+.mk.s-yellow svg { width: 11px; height: 11px; }
+.prov-tag { font-size: 12px; color: var(--muted); }
+
+@media (max-width: 960px) {
+  .main { grid-template-columns: 1fr; }
+  #globe { height: 520px; }
+  .side { height: auto; max-height: 80vh; }
+  .method { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  #globe { height: 440px; }
+  .legend .icons { display: none; }
+  .strength { min-width: 0; width: 100%; }
+  .next li { grid-template-columns: 1fr; gap: 2px; }
+  .regions { right: 14px; }
+  .newpill { top: auto; bottom: 14px; right: 14px; }
+  .layers { width: 180px; }
+  .legend { right: auto; bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .mk.new::after { animation: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>El Niño <span class="w">Watch</span></h1>
+      <p id="headline">A very strong El Niño is under way. Find out what it means where you live.</p>
+    </div>
+    <div class="strength" aria-label="Strength of this El Niño">
+      <span class="label">How strong is it?</span>
+      <div class="meter" id="meter"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="meter-labels"><span>Weak</span><span>Strong</span><span>Record</span></div>
+      <strong id="strengthLabel">Very strong</strong>
+      <span class="sub" id="peak">Peak expected Nov – Jan</span>
+    </div>
+  </header>
+
+  <div class="finder">
+    <div class="searchbox">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="Search your city or region (e.g. Corrientes, Guayaquil, Manila)" aria-label="Search your city or region" role="combobox" aria-expanded="false" aria-controls="results">
+    </div>
+    <ul class="results" id="results" role="listbox" hidden></ul>
+    <div class="quick" id="quick"><span>Try:</span></div>
+  </div>
+
+  <div class="main">
+    <div class="globe-panel">
+      <div id="globe" aria-label="Interactive globe. Drag to rotate, scroll to zoom, click a region or alert."></div>
+      <div class="overlay regions" role="group" aria-label="Region">
+        <button class="rbtn" id="r-latam" data-region="latam" aria-pressed="true">Latin America</button>
+        <button class="rbtn" id="r-sea" data-region="sea" aria-pressed="false">Southeast Asia</button>
+        <button class="rbtn" id="r-all" data-region="all" aria-pressed="false">World</button>
+      </div>
+      <button class="overlay newpill" id="newpill" hidden><i class="pulse"></i><span></span></button>
+      <details class="overlay layers" id="layers">
+        <summary>Layers</summary>
+        <div class="lyr">
+          <span class="ttl">Show on the globe</span>
+          <label><input type="checkbox" id="l-alerts" checked> Alerts</label>
+          <label><input type="checkbox" id="l-warn" checked> Serious weather warnings</label>
+          <label><input type="checkbox" id="l-fires" checked> Fires (last 48 h)</label>
+          <span class="ttl">Background</span>
+          <div class="seg" id="views">
+            <button data-view="map" aria-pressed="true">Map</button>
+            <button data-view="truecolor" aria-pressed="false">Satellite</button>
+            <button data-view="smoke" aria-pressed="false">Smoke</button>
+            <button data-view="rain" aria-pressed="false">Rain</button>
+          </div>
+          <span class="when" id="satwhen"></span>
+          <span class="ttl">Symbols</span>
+          <div class="icons" id="iconLegend"></div>
+        </div>
+      </details>
+      <div class="overlay legend">
+        <div class="box">
+          <span class="ttl">What El Niño brings here</span>
+          <div class="ramp-row"><span>Too much rain</span><div class="ramp"><i style="background:var(--wet1)"></i><i style="background:var(--wet2)"></i><i style="background:var(--wet3)"></i><i style="background:var(--wet4)"></i></div></div>
+          <div class="ramp-row"><span>Drought, heat, fire</span><div class="ramp"><i style="background:var(--dry1)"></i><i style="background:var(--dry2)"></i><i style="background:var(--dry3)"></i><i style="background:var(--dry4)"></i></div></div>
+          <div class="lv"><span>Watch</span><span>Severe</span></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="side" aria-label="Details">
+      <div class="scope" id="scope" hidden></div>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" id="t-area" aria-selected="false" hidden>Overview</button>
+        <button class="tab" role="tab" id="t-hot" aria-selected="true">Hardest hit</button>
+        <button class="tab" role="tab" id="t-alerts" aria-selected="false">Alerts</button>
+        <button class="tab" role="tab" id="t-warn" aria-selected="false">Warnings</button>
+      </div>
+      <div class="pane" id="pane"></div>
+    </aside>
+  </div>
+
+  <section class="coming" id="coming" aria-label="What is coming">
+    <header>
+      <h2 id="comingTitle">What's coming</h2>
+      <p id="comingNote">Key dates so far and forecasts for the months ahead. Click one to see the area.</p>
+    </header>
+    <div class="track" id="track"><ol class="steps" id="steps"></ol></div>
+  </section>
+
+  <section class="live" aria-label="Live data">
+    <h2>Live data</h2>
+    <p class="note" id="liveupd">Loading live data…</p>
+    <div class="livesrc" id="livesrc"></div>
+  </section>
+
+  <div class="method">
+    <section>
+      <h2>How to read the map</h2>
+      <p>Blue areas usually get too much rain during El Niño. Yellow to red areas get too little rain, more heat, fires or smoke.</p>
+      <p>The darker the colour, the higher the level, from Watch to Severe. A level is set by the most serious thing happening in the area, not by how many reports there are: one emergency-level alert counts more than many minor ones. It combines how strongly El Niño usually hits the area, the severity of active alerts and official warnings, and how intense satellite-detected fires are (their heat output, not just how many hotspots there are).</p>
+      <p>Click a city, region or country to see the hardest-hit places, alerts, warnings and what's coming for that area only.</p>
+    </section>
+    <section>
+      <h2>What this page does not say</h2>
+      <p>Not every flood or fire is caused by El Niño. Alerts show up here when they fall in places where El Niño raises the risk at this time of year.</p>
+      <p>This is a guide, not an official warning. In an emergency, follow your local authorities.</p>
+    </section>
+    <section>
+      <h2>Sources and updates</h2>
+      <p>Forecasts from NOAA and national weather services; alerts from official agencies and news reports, linked on each item. <span id="updated">Updated once a day.</span></p>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+<script>
+(function () {
+  "use strict";
+  const LATAM = new Set("ARG URY PRY BRA BOL PER ECU COL VEN CHL PAN CRI NIC HND SLV GTM MEX BLZ CUB HTI DOM GUY SUR".split(" "));
+  const SEA = new Set("IDN MYS SGP BRN PHL VNM THA KHM LAO MMR TLS PNG".split(" "));
+  const TRACKED = new Set([...LATAM, ...SEA]);
+  const regionOf = iso => LATAM.has(iso) ? "latam" : SEA.has(iso) ? "sea" : null;
+  const LEVELS = ["Normal", "Watch", "Elevated", "High", "Severe"];
+  const SEV = { red: { pts: 3, name: "Emergency", c: "--sev-red" }, orange: { pts: 2, name: "Warning", c: "--sev-orange" }, yellow: { pts: 1, name: "Watch", c: "--sev-yellow" } };
+  const EFFECT = { wet: "Too much rain", dry: "Too little rain, heat or fire" };
+  const RAMP = {
+    wet: ["", "159,208,255", "89,166,242", "43,111,219", "27,63,166"],
+    dry: ["", "255,213,110", "255,160,71", "236,90,42", "194,31,47"]
+  };
+  const ALPHA = [0, .5, .64, .78, .88];
+  const VIEWS = { latam: { lat: -14, lng: -66, altitude: 1.9 }, sea: { lat: 4, lng: 112, altitude: 1.6 }, all: { lat: -5, lng: -40, altitude: 2.6 } };
+  const ICON = {
+    flood: '<path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/>',
+    drought: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
+    fire: '<path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 3-5 0 2 1 3 2 3 0-3-1-5 0-8z"/>',
+    haze: '<path d="M7 17h10a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.5 1.5A3.5 3.5 0 0 0 7 17z"/>',
+    heat: '<path d="M10 4a2 2 0 0 1 4 0v9.5a4 4 0 1 1-4 0z"/>',
+    fisheries: '<path d="M3 12c3-4 8-5 12-2l4-3v10l-4-3c-4 3-9 2-12-2z"/>',
+    shipping: '<path d="M4 15l2 4h12l2-4H4zM7 15V9h10v6M12 9V5"/>',
+    energy: '<path d="M13 3L5 14h6l-1 7 8-11h-6z"/>',
+    cyclone: '<circle cx="12" cy="12" r="3"/><path d="M5 9a8 8 0 0 1 11-5M19 15a8 8 0 0 1-11 5"/>',
+    rain: '<path d="M7 14h10a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.5 1.5A3.5 3.5 0 0 0 7 14zM8 17l-1 3M12 17l-1 3M16 17l-1 3"/>',
+    storm: '<path d="M7 13h10a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.5 1.5A3.5 3.5 0 0 0 7 13zM12 13l-2 4h4l-2 4"/>'
+  };
+  const KIND_NAMES = { rain: "Heavy rain", storm: "Storms", flood: "Flooding", heat: "Heat", fire: "Fire danger", drought: "Drought", haze: "Smoke / air quality" };
+  const WET_KINDS = new Set(["rain", "storm", "flood"]);
+  const ICON_NAMES = { flood: "Flood", drought: "Drought", fire: "Fire", haze: "Smoke", heat: "Heat", fisheries: "Fishing", shipping: "Shipping", energy: "Power", cyclone: "Cyclone" };
+  const QUICK = ["Corrientes", "Buenos Aires", "Porto Alegre", "Guayaquil", "Piura", "Bogota", "Tegucigalpa", "Palangkaraya", "Kuala Lumpur", "Manila"];
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const fmtDate = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const svgIcon = (t, stroke) => `<svg viewBox="0 0 24 24" fill="none" stroke="${stroke || "#fff"}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[t] || ICON.drought}</svg>`;
+  const iconStroke = sev => sev === "yellow" ? "#3a2a00" : "#fff";
+
+  let D, provinces, world, cities, globe, A = null;
+  const provWarn = new Map(), forecastList = [];
+  const layers = { alerts: true, warn: true, fires: true };
+  let view = "map";
+  const fmtTime = d => { const t = new Date(d); return isNaN(t) ? "" : t.toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); };
+  const sevRank = { red: 0, orange: 1, yellow: 2 };
+  const ALERT_LVL = { red: 4, orange: 3, yellow: 2 };  // alert colour -> area level (Severe / High / Elevated)
+  const WARN_LVL = { red: 3, orange: 2 };              // official weather warnings are forecasts of danger, so one step lower
+  let region = "latam", tab = "hot", sel = null;
+  const newIds = new Set();
+  const countryName = { SGP: "Singapore" };
+  const provByKey = new Map(), zoneById = new Map(), zoneOfProv = new Map();
+  const alertProvs = new Map(), provAlerts = new Map(), provStats = new Map(), zoneStats = new Map();
+
+  /* ---------- geometry ---------- */
+  function rings(f) { return f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates; }
+  function bbox(f) {
+    const a = [180, 90, -180, -90];
+    rings(f).forEach(poly => poly[0].forEach(([x, y]) => { a[0] = Math.min(a[0], x); a[1] = Math.min(a[1], y); a[2] = Math.max(a[2], x); a[3] = Math.max(a[3], y); }));
+    return a;
+  }
+  function inRing(x, y, ring) {
+    let ins = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const [xi, yi] = ring[i], [xj, yj] = ring[j];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) ins = !ins;
+    }
+    return ins;
+  }
+  function contains(f, lng, lat) {
+    const b = f._bb; if (lng < b[0] || lng > b[2] || lat < b[1] || lat > b[3]) return false;
+    return rings(f).some(poly => inRing(lng, lat, poly[0]) && !poly.slice(1).some(h => inRing(lng, lat, h)));
+  }
+  function provinceAt(lng, lat, iso) {
+    const list = provinces.features.filter(f => !iso || f.properties.iso === iso);
+    let hit = list.find(f => contains(f, lng, lat));
+    if (!hit && iso) { // points just off the coast: take the nearest region
+      let best = 1e9; list.forEach(f => { const c = f._c, d = (c[0] - lng) ** 2 + (c[1] - lat) ** 2; if (d < best) { best = d; hit = f; } });
+    }
+    return hit || null;
+  }
+  function km(a, b) {
+    const R = 6371, r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLng = (b.lng - a.lng) * r;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  const pkey = f => f.properties.iso + "|" + f.properties.name;
+
+  /* ---------- model ---------- */
+  function buildModel() {
+    provinces.features = provinces.features.filter(f => f.properties.name && f.geometry);
+    provinces.features.forEach(f => {
+      f._bb = bbox(f); f._c = [(f._bb[0] + f._bb[2]) / 2, (f._bb[1] + f._bb[3]) / 2];
+      provByKey.set(pkey(f), f);
+    });
+    world.features.forEach(f => { countryName[f.properties.iso] = f.properties.name; });
+    if (A) {
+      (A.alerts || []).filter(a => !a.sameAs && a.lat != null).forEach(a => {
+        const pn = a.prov ? a.prov.split("|")[1] : null, cn = countryName[a.iso] || a.iso;
+        D.alerts.push(Object.assign({}, a, { live: true, place: a.countryWide ? cn + " (country-wide)" : (pn ? pn + ", " : "") + cn, text: a.text || a.severityText || "" }));
+      });
+      const links = A.curatedLinks || {};
+      D.alerts.forEach(a => { if (!a.worldview && links[a.id]) a.worldview = links[a.id].worldview; });
+      (A.warnings || []).forEach(w => { if (!provWarn.has(w.prov)) provWarn.set(w.prov, []); provWarn.get(w.prov).push(w); });
+      Object.values(A.forecast || {}).forEach(f => forecastList.push(f));
+    }
+
+    D.zones.forEach(z => zoneById.set(z.id, z));
+    D.zones.forEach(z => z.provinces.forEach(p => { if (p !== "*") zoneOfProv.set(z.iso + "|" + p, z); }));
+    D.zones.filter(z => z.provinces.includes("*")).forEach(z => {
+      provinces.features.forEach(f => { if (f.properties.iso === z.iso && !zoneOfProv.has(pkey(f))) zoneOfProv.set(pkey(f), z); });
+    });
+
+    D.alerts.forEach(a => {
+      const set = new Set();
+      const f = provinceAt(a.lng, a.lat, a.iso); if (f) set.add(pkey(f));
+      (a.areas || []).forEach(n => {
+        if (n === "*") provinces.features.forEach(g => { if (g.properties.iso === a.iso) set.add(pkey(g)); });
+        else set.add(a.iso + "|" + n);
+      });
+      alertProvs.set(a.id, set);
+      set.forEach(k => { if (!provAlerts.has(k)) provAlerts.set(k, []); provAlerts.get(k).push(a); });
+    });
+
+    // Severity, not volume: each area takes the level of its single most serious event.
+    // Many reports of a small event never add up to more than one report of a big one.
+    provinces.features.forEach(f => {
+      const k = pkey(f), z = zoneOfProv.get(k), al = provAlerts.get(k) || [];
+      const wn = provWarn.get(k) || [];
+      const ev = [];
+      al.forEach(a => ev.push({ t: "alert", lvl: ALERT_LVL[a.severity], sev: a.severity, a }));
+      // official warnings count only when of the kind El Niño drives here
+      wn.filter(w => !z || (z.effect === "wet") === WET_KINDS.has(w.kind))
+        .forEach(w => { if (WARN_LVL[w.severity]) ev.push({ t: "warn", lvl: WARN_LVL[w.severity], sev: w.severity, w }); });
+      const fire = fireInfo(k);
+      if (fire.tier) ev.push({ t: "fire", lvl: fire.tier, sev: fire.tier >= 3 ? "red" : fire.tier === 2 ? "orange" : "yellow", fire });
+      ev.sort((x, y) => y.lvl - x.lvl || sevRank[x.sev] - sevRank[y.sev] || (y.fire ? y.fire.frp : 0) - (x.fire ? x.fire.frp : 0));
+      const top = ev[0] || null;
+      let level = Math.max(z ? z.base : 0, top ? top.lvl : 0);
+      if (!z && al.length) level = Math.max(1, level);
+      level = Math.min(4, level);
+      const effect = z ? z.effect : (al.some(a => a.type === "flood") ? "wet" : "dry");
+      provStats.set(k, { level, effect, top, events: ev, alerts: al, warn: wn, fires: fire.count, frp: fire.frp, fireTier: fire.tier, zone: z || null, score: scoreOf(level, top, fire) });
+    });
+
+    D.zones.forEach(z => {
+      const keys = [...zoneOfProv.entries()].filter(([, zz]) => zz === z).map(([k]) => k);
+      let level = 0, top = null, frp = 0, best = null; const al = new Map();
+      keys.forEach(k => {
+        const s = provStats.get(k); if (!s) return;
+        level = Math.max(level, s.level); frp += s.frp || 0;
+        s.alerts.forEach(a => al.set(a.id, a));
+        if (!best || s.score > best.score) best = s;
+      });
+      top = best ? best.top : null;
+      let x = 0, y = 0, n = 0, bb = [180, 90, -180, -90];
+      keys.forEach(k => { const f = provByKey.get(k); if (!f) return; x += f._c[0]; y += f._c[1]; n++; bb = [Math.min(bb[0], f._bb[0]), Math.min(bb[1], f._bb[1]), Math.max(bb[2], f._bb[2]), Math.max(bb[3], f._bb[3])]; });
+      const span = Math.max(bb[2] - bb[0], bb[3] - bb[1]);
+      zoneStats.set(z.id, { level, top, frp, score: scoreOf(level, top, { frp }), alerts: [...al.values()], keys, effect: z.effect, center: n ? { lng: x / n, lat: y / n } : null, alt: Math.min(2.2, Math.max(0.7, span / 14)) });
+    });
+  }
+
+  /* ---------- severity helpers ---------- */
+  // fire intensity from satellite fire radiative power (MW): a big hot fire outranks many small ones
+  function fireInfo(k) {
+    const F = A && A.fires; if (!F) return { tier: 0, count: 0, frp: 0, max: 0 };
+    const count = (F.byProv || {})[k] || 0;
+    const frp = F.frpByProv ? (F.frpByProv[k] || 0) : count * 4; // older data: rough FRP estimate
+    const max = F.maxCellFrp ? (F.maxCellFrp[k] || 0) : 0;
+    const tier = (max >= 2000 || frp >= 15000) ? 3 : (max >= 500 || frp >= 4000) ? 2 : frp >= 800 ? 1 : 0;
+    return { tier, count, frp: Math.round(frp), max: Math.round(max) };
+  }
+  function scoreOf(level, top, fire) {
+    // level first, then how serious the worst event is, then its physical size; counts are never used
+    return level * 1e6 + (top ? (3 - sevRank[top.sev]) * 1e5 + top.lvl * 1e4 : 0) + Math.min(9999, Math.log10(1 + (fire ? fire.frp : 0)) * 1000);
+  }
+  function whyHtml(top) {
+    if (!top) return "";
+    const dot = `<i style="background:var(${SEV[top.sev].c})"></i>`;
+    if (top.t === "alert") return `<div class="why">${dot}${esc(SEV[top.sev].name)}: ${esc(top.a.title)}</div>`;
+    if (top.t === "warn") return `<div class="why">${dot}Official ${esc(SEV[top.sev].name.toLowerCase())}: ${esc(KIND_NAMES[top.w.kind] || top.w.kind)}</div>`;
+    return `<div class="why">${dot}Intense fires: ${top.fire.frp.toLocaleString("en-GB")} MW of fire heat in 48 h</div>`;
+  }
+  const FIRMS_SRC = "https://firms.modaps.eosdis.nasa.gov/map/";
+  const firmsLink = (lat, lng) => `https://firms.modaps.eosdis.nasa.gov/map/#d:48hrs;@${lng.toFixed(2)},${lat.toFixed(2)},7.0z`;
+  const WMO_SRC = "https://severeweather.wmo.int/";
+  const ext = (u, label) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;
+  function warnUrl(w) { return w.url || (w.origin === "AccuWeather" ? "https://www.accuweather.com/" : WMO_SRC); }
+  function warnSrc(w) { return ext(warnUrl(w), w.source + (w.url ? "" : w.origin === "WMO" ? " via WMO" : "")); }
+  // sources behind the hand-written texts for an area: explicit links in data.json first, then the reports filed for that area
+  function zoneSources(z, max) {
+    const out = [], seen = new Set();
+    const add = (n, u) => { if (u && !seen.has(u)) { seen.add(u); out.push([n, u]); } };
+    (z.sources || []).forEach(([n, u]) => add(n, u));
+    const st = zoneStats.get(z.id);
+    // reports about the kind of impact this area is known for come first (floods for wet areas, drought/fire/heat for dry ones)
+    const fits = a => (z.effect === "wet") === (a.type === "flood");
+    (st ? st.alerts : []).filter(a => !a.live).sort((a, b) => (fits(b) - fits(a)) || sevRank[a.severity] - sevRank[b.severity] || b.date.localeCompare(a.date)).forEach(a => add(a.source, a.url));
+    (st ? st.alerts : []).filter(a => a.live).forEach(a => add(a.source, a.url));
+    if (!out.length) ((D.countries[z.iso] || {}).sources || []).forEach(([n, u]) => add(n, u));
+    return out.slice(0, max || 4);
+  }
+  function timelineSources(t) {
+    if (t.sources) return t.sources;
+    const z = t.zone ? zoneById.get(t.zone) : null;
+    if (!z) return t.kind === "now" ? [] : [[D.headline.source.split(",")[0], D.headline.sourceUrl]];
+    const st = zoneStats.get(z.id);
+    const curated = (st ? st.alerts : []).filter(a => !a.live && a.url);
+    if (curated.length) {
+      const near = curated.slice().sort((a, b) => Math.abs(new Date(a.date) - new Date(t.date)) - Math.abs(new Date(b.date) - new Date(t.date)))[0];
+      return [[near.source, near.url]];
+    }
+    return zoneSources(z, 1);
+  }
+  const srcLine = (list, prefix) => list.length ? `<p class="src">${esc(prefix || "Source:")} ${list.map(([n, u]) => ext(u, n)).join(" · ")}</p>` : "";
+
+  /* ---------- small renderers ---------- */
+  function rampColor(effect, level, alpha) { return level ? `rgba(${RAMP[effect][level]},${alpha ?? ALPHA[level]})` : "transparent"; }
+  function lvlChip(level, effect) {
+    if (!level) return '<span class="lvl" style="background:var(--surface-2);color:var(--fg)">Normal</span>';
+    return `<span class="lvl${level >= 3 ? " light" : ""}" style="background:${rampColor(effect, level, 1)}">${LEVELS[level]}</span>`;
+  }
+  function alertRow(a, extra, detail, nav) {
+    const s = SEV[a.severity];
+    const src = `<p class="src">${a.url ? ext(a.url, a.source) : esc(a.source)}${a.worldview ? " · " + ext(a.worldview, "See from satellite") : ""}</p>`;
+    return `<li class="aitem s-${a.severity}"${nav === false ? "" : ` tabindex="0" data-alert="${esc(a.id)}"`}${nav === false ? ' style="cursor:default"' : ""}>
+      <span class="ic" style="background:var(${s.c})">${svgIcon(a.type, iconStroke(a.severity))}</span>
+      <div><div class="meta">${newIds.has(a.id) ? '<span class="newtag">NEW</span>' : ""}${a.live ? '<span class="livetag">LIVE</span>' : ""}<span style="color:var(--fg);font-weight:600">${s.name}</span><span>${esc(countryName[a.iso] || a.iso)}</span><span class="mono">${esc(fmtDate(a.live && a.updated ? a.updated : a.date))}</span>${extra || ""}</div>
+      <h3>${esc(a.title)}</h3><p>${esc(a.place)}</p>${detail && a.text ? `<p class="more">${esc(a.text)}</p>` : ""}${src}</div></li>`;
+  }
+  function warnRow(w, nav) {
+    const s = SEV[w.severity], pn = w.prov.split("|")[1];
+    return `<li class="aitem"${nav === false ? ' style="cursor:default"' : ` tabindex="0" data-prov="${esc(w.prov)}"`}>
+      <span class="ic" style="background:var(${s.c});border-radius:6px">${svgIcon(w.kind, iconStroke(w.severity))}</span>
+      <div><div class="meta"><span style="color:var(--fg);font-weight:600">${s.name}</span><span>${esc(countryName[w.iso] || w.iso)}</span>${w.expires ? `<span class="mono">until ${esc(fmtTime(w.expires))}</span>` : ""}</div>
+      <h3>${esc(KIND_NAMES[w.kind] || w.kind)} · ${esc(pn)}</h3><p>${esc(w.headline || (w.events || []).join(", "))}</p><p class="src">${warnSrc(w)}</p></div></li>`;
+  }
+
+  function renderHeader() {
+    const h = D.headline;
+    document.getElementById("headline").textContent = h.text;
+    document.querySelectorAll("#meter i").forEach((i, n) => i.classList.toggle("on", n < h.strength));
+    document.getElementById("strengthLabel").textContent = h.strengthLabel;
+    document.getElementById("peak").textContent = h.peak;
+    document.getElementById("updated").innerHTML = "Updated " + esc(new Date(D.updated).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })) + '. Strength from <a href="' + esc(h.sourceUrl) + '" target="_blank" rel="noopener">' + esc(h.source) + "</a>.";
+    const dot = c => `<i style="width:9px;height:9px;border-radius:50%;background:var(${c})"></i>`;
+    document.getElementById("iconLegend").innerHTML = '' +
+      Object.keys(ICON_NAMES).filter(t => D.alerts.some(a => a.type === t)).map(t => `<span>${svgIcon(t, "#cfdde3")}${ICON_NAMES[t]}</span>`).join("") +
+      `<span>${dot("--sev-yellow")}Watch</span><span>${dot("--sev-orange")}Warning</span><span>${dot("--sev-red")}Emergency</span>` +
+      `<span><i style="width:10px;height:10px;border-radius:3px;border:1.5px solid #cfdde3"></i>Official warning</span><span><i style="width:10px;height:10px;border-radius:50%;background:radial-gradient(#ffc850,#ff5a14)"></i>Fire hotspot</span>`;
+    const q = document.getElementById("quick");
+    QUICK.forEach(name => {
+      const c = cities.find(x => x[0] === name); if (!c) return;
+      const b = document.createElement("button"); b.className = "chip"; b.textContent = name === "Bogota" ? "Bogotá" : name;
+      b.addEventListener("click", () => openCity(c)); q.appendChild(b);
+    });
+  }
+
+  // rough date for free-text "when" labels such as "Nov – Dec" or "Early 2027", used only for ordering
+  const MON = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+  function whenKey(txt, today) {
+    const t = txt.toLowerCase(), y27 = /2027/.test(t);
+    if (/next (few )?(days|week)/.test(t)) return new Date(today.getTime() + 10 * 864e5);
+    if (/early 2027/.test(t)) return new Date("2027-01-20T00:00:00Z");
+    if (/mid-?2027/.test(t)) return new Date("2027-06-15T00:00:00Z");
+    const m = t.match(/(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/);
+    if (m) { const mo = MON[m[1]], yr = y27 || mo < 6 ? 2027 : 2026; const d = t.match(/(\d{1,2})\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/); return new Date(Date.UTC(yr, mo, d ? +d[1] : 15)); }
+    return new Date(today.getTime() + 30 * 864e5);
+  }
+  function renderTimeline() {
+    const ol = document.getElementById("steps"), sc = sel ? scopeOf(sel) : null;
+    const title = document.getElementById("comingTitle"), note = document.getElementById("comingNote");
+    let items;
+    if (!sc) {
+      items = D.timeline.map(t => ({ t, key: new Date(t.date + "T00:00:00Z") }));
+      title.textContent = "What's coming";
+      note.innerHTML = "Key dates so far and forecasts for the months ahead. Click one to see the area.";
+    } else {
+      const zones = sc.zones, today = new Date((D.timeline.find(t => t.kind === "now") || {}).date + "T00:00:00Z");
+      items = D.timeline.filter(t => !t.zone ? true : zones.has(t.zone) && t.kind !== "next").map(t => ({ t, key: new Date(t.date + "T00:00:00Z") }));
+      zones.forEach(zid => {
+        const z = zoneById.get(zid);
+        if (z.next && z.next.length) z.next.forEach(n => items.push({ t: { kind: "next", zone: zid, title: n.when, text: n.text, when: n.when, sources: n.sources }, key: whenKey(n.when, today) }));
+        else D.timeline.filter(t => t.zone === zid && t.kind === "next").forEach(t => items.push({ t, key: new Date(t.date + "T00:00:00Z") }));
+      });
+      title.textContent = "What's coming · " + sc.label;
+      note.innerHTML = (zones.size ? "Key dates and forecasts for this area, plus El Niño milestones." : "El Niño does not usually change the weather much here; only the global milestones are shown.") + ' <button type="button" data-clearscope>Show all areas</button>';
+    }
+    items.sort((a, b) => a.key - b.key);
+    ol.innerHTML = items.map(({ t }) => {
+      const z = t.zone ? zoneById.get(t.zone) : null;
+      const when = t.when ? t.when : fmtDate(t.date) + (t.date.startsWith("2027") ? " 2027" : "");
+      const head = t.when ? (sc && sc.zones.size > 1 && z ? z.name : "Forecast") : t.title;
+      const src = srcLine(t.when ? (t.sources || zoneSources(z, 1)) : timelineSources(t));
+      const inner = `<time${t.date ? ` datetime="${esc(t.date)}"` : ""}>${t.kind === "next" ? "Expected · " : ""}${esc(when)}</time><h3>${esc(head)}</h3><p>${esc(t.text)}</p>`;
+      const where = z && !sc ? `<button data-zone="${esc(z.id)}" class="where" style="all:unset;cursor:pointer;font-size:12px;color:var(--accent)">${esc(z.name)} →</button>` : "";
+      return `<li class="step ${esc(t.kind)}"><div>${inner}${where}${src}</div></li>`;
+    }).join("");
+    const track = document.getElementById("track"), now = ol.querySelector(".step.now");
+    track.scrollLeft = now ? Math.max(0, now.offsetLeft - 220) : 0;
+  }
+
+  /* ---------- scope: what a selection covers ---------- */
+  const NEAR_KM = 120;
+  // neighbours: regions whose outline (bounding box) comes within NEAR_KM of the point
+  function provsNear(ref) {
+    return provinces.features.filter(f => {
+      if (!TRACKED.has(f.properties.iso)) return false;
+      const b = f._bb, p = { lng: Math.min(Math.max(ref.lng, b[0]), b[2]), lat: Math.min(Math.max(ref.lat, b[1]), b[3]) };
+      return km(ref, p) <= NEAR_KM;
+    }).map(pkey);
+  }
+  function scopeOf(s) {
+    if (s._scope) return s._scope;
+    let core = new Set(), near = new Set(), ref = null, label = "", radius = 0;
+    const z = s.zone ? zoneById.get(s.zone) : null;
+    if (s.country) {
+      provinces.features.forEach(f => { if (f.properties.iso === s.iso) core.add(pkey(f)); });
+      label = countryName[s.iso] || s.iso;
+    } else if (s.city || s.prov) {
+      const f = s.prov ? provByKey.get(s.prov) : null;
+      ref = s.city ? { lat: s.city.lat, lng: s.city.lng } : f ? { lat: f._c[1], lng: f._c[0] } : null;
+      if (s.prov) core.add(s.prov);
+      if (ref) provsNear(ref).forEach(k => near.add(k));
+      radius = s.city ? 300 : 250;
+      label = s.city ? s.city.name : f ? f.properties.name : (countryName[s.iso] || "");
+    } else if (z) {
+      zoneStats.get(z.id).keys.forEach(k => core.add(k));
+      label = z.name;
+    }
+    const all = new Set([...core, ...near]);
+    const zones = new Set();
+    all.forEach(k => { const zz = zoneOfProv.get(k); if (zz && (core.has(k) || (provStats.get(k) || {}).level >= 1)) zones.add(zz.id); });
+    if (core.size) { const coreZones = new Set([...core].map(k => zoneOfProv.get(k)).filter(Boolean).map(zz => zz.id)); if (coreZones.size) { zones.clear(); coreZones.forEach(id => zones.add(id)); } }
+    const alerts = D.alerts.map(a => {
+      const ap = alertProvs.get(a.id), inCore = [...ap].some(k => core.has(k)), inNear = [...ap].some(k => near.has(k));
+      const d = ref ? km(ref, a) : null;
+      return { a, d, inCore, ok: inCore || inNear || (d != null && d <= radius) };
+    }).filter(o => o.ok)
+      .sort((x, y) => sevRank[x.a.severity] - sevRank[y.a.severity] || (y.inCore - x.inCore) || ((x.d ?? 0) - (y.d ?? 0)) || y.a.date.localeCompare(x.a.date));
+    const warns = ((A && A.warnings) || []).filter(w => all.has(w.prov))
+      .sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || (core.has(b.prov) - core.has(a.prov)) || a.prov.localeCompare(b.prov));
+    const sub = s.city ? "and nearby areas" : s.prov ? "and neighbouring regions" : s.country ? "whole country" : "all regions in this area";
+    return (s._scope = { core, near, all, ref, label, sub, zones, alerts, warns, iso: s.iso });
+  }
+
+  /* ---------- side panel ---------- */
+  function hotRow(name, sub, st, effect, attrs, tag) {
+    return `<li class="zrow" tabindex="0" ${attrs}>
+      <span class="sw" style="background:${rampColor(effect, Math.max(1, st.level), 1)}"></span>
+      <div><div class="n">${esc(name)}${tag ? `<span class="selt">${esc(tag)}</span>` : ""}</div><div class="c">${esc(sub)}</div>${whyHtml(st.top)}</div>
+      ${lvlChip(st.level, effect)}
+    </li>`;
+  }
+  function renderPane() {
+    const sc = sel ? scopeOf(sel) : null;
+    const tA = document.getElementById("t-area");
+    tA.hidden = !sc;
+    tA.setAttribute("aria-selected", !!sc && tab === "area");
+    document.getElementById("t-hot").setAttribute("aria-selected", tab === "hot");
+    document.getElementById("t-alerts").setAttribute("aria-selected", tab === "alerts");
+    document.getElementById("t-warn").setAttribute("aria-selected", tab === "warn");
+    const cnt = n => sc ? ` <span class="n">${n}</span>` : "";
+    document.getElementById("t-alerts").innerHTML = "Alerts" + cnt(sc ? sc.alerts.length : 0);
+    document.getElementById("t-warn").innerHTML = "Warnings" + cnt(sc ? sc.warns.length : 0);
+    const bar = document.getElementById("scope");
+    bar.hidden = !sc;
+    if (sc) bar.innerHTML = `<span>Showing <b>${esc(sc.label)}</b>${sc.iso && !sel.country && sc.label !== countryName[sc.iso] ? ", " + esc(countryName[sc.iso] || "") : ""} · ${esc(sc.sub)}</span><button type="button" data-clearscope>Show whole world ✕</button>`;
+    const pane = document.getElementById("pane");
+    pane.scrollTop = 0;
+    if (sc && tab === "area") { pane.innerHTML = areaCard(sel); return; }
+    if (sc) return renderScoped(pane, sc);
+    if (tab === "hot") {
+      const groups = [["latam", "Latin America"], ["sea", "Southeast Asia"]].filter(([k]) => region === "all" || region === k);
+      pane.innerHTML = groups.map(([k, label]) => {
+        const zs = D.zones.filter(z => regionOf(z.iso) === k).map(z => ({ z, s: zoneStats.get(z.id) }))
+          .filter(o => o.s.level >= 2 || o.s.alerts.length)
+          .sort((a, b) => b.s.score - a.s.score || a.z.name.localeCompare(b.z.name));
+        return `<div class="group-h label">${label} · most severe first</div><ul class="list">${zs.map(({ z, s }) => hotRow(z.name, `${countryName[z.iso] || z.iso} · ${z.effect === "wet" ? "Too much rain" : "Drought, heat or fire"}`, s, z.effect, `data-zone="${esc(z.id)}"`)).join("")}</ul>`;
+      }).join("");
+    } else if (tab === "warn") {
+      const ws = ((A && A.warnings) || []).filter(w => region === "all" || regionOf(w.iso) === region)
+        .sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || a.prov.localeCompare(b.prov));
+      pane.innerHTML = ws.length ? `<p class="note" style="padding:12px 16px 4px">Current warnings from national weather services, collected through the <a href="${WMO_SRC}" target="_blank" rel="noopener">WMO ↗</a> and AccuWeather. Most severe first. Not all countries publish them.</p><ul class="list">${ws.map(w => warnRow(w)).join("")}</ul>`
+        : '<p class="empty">No official warnings available for this region right now.</p>';
+    } else {
+      const list = D.alerts.filter(a => region === "all" || regionOf(a.iso) === region)
+        .sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || (newIds.has(b.id) - newIds.has(a.id)) || b.date.localeCompare(a.date));
+      pane.innerHTML = list.length ? `<p class="note" style="padding:12px 16px 4px">Most severe first. Click one to see the area.</p><ul class="list">${list.map(a => alertRow(a)).join("")}</ul>` : '<p class="empty">No active alerts in this region.</p>';
+    }
+  }
+  function renderScoped(pane, sc) {
+    if (tab === "hot") {
+      const rows = [...sc.all].map(k => ({ k, st: provStats.get(k), f: provByKey.get(k) }))
+        .filter(o => o.st && o.f && (o.st.level >= 1 || o.st.alerts.length || sc.core.has(o.k)))
+        .sort((a, b) => (!sel.country && !sel.zone ? sc.core.has(b.k) - sc.core.has(a.k) : 0) || b.st.score - a.st.score || a.f.properties.name.localeCompare(b.f.properties.name));
+      pane.innerHTML = rows.length ? `<div class="group-h label">Hardest hit · ${esc(sc.label)} ${esc(sc.sub)}</div><ul class="list">${rows.map(({ k, st, f }) => {
+        const sub = [countryName[f.properties.iso], st.zone ? st.zone.name : null, sc.ref && !sc.core.has(k) ? "nearby" : null].filter(Boolean).join(" · ");
+        return hotRow(f.properties.name, sub, st, st.effect, `data-goprov="${esc(k)}"`, sc.core.has(k) && !sel.country && !sel.zone ? "SELECTED" : "");
+      }).join("")}</ul>` : '<p class="empty">No area with an El Niño signal or active alert here.</p>';
+    } else if (tab === "warn") {
+      pane.innerHTML = sc.warns.length ? `<p class="note" style="padding:12px 16px 4px">Official warnings for ${esc(sc.label)} ${esc(sc.sub)}, most severe first.</p><ul class="list">${sc.warns.map(w => warnRow(w, false)).join("")}</ul>`
+        : `<p class="empty">No official weather warnings for ${esc(sc.label)} right now. Not all countries publish them; check the official sources in the Overview tab.</p>`;
+    } else {
+      pane.innerHTML = sc.alerts.length ? `<p class="note" style="padding:12px 16px 4px">Alerts for ${esc(sc.label)} ${esc(sc.sub)}, most severe first.</p><ul class="list">${sc.alerts.map(({ a, d, inCore }) => alertRow(a, d != null && !(inCore && sel.city == null) ? `<span>${d < 20 ? "Here" : Math.round(d / 5) * 5 + " km away"}</span>` : "", true, false)).join("")}</ul>`
+        : `<p class="empty">No active alerts for ${esc(sc.label)} right now.</p>`;
+    }
+  }
+
+  function areaCard(s) {
+    const z = s.zone ? zoneById.get(s.zone) : null;
+    const iso = s.iso || (z && z.iso);
+    const st = s.country ? countryStats(iso) : s.prov ? provStats.get(s.prov) : (z ? zoneStats.get(z.id) : null);
+    const level = st ? st.level : 0;
+    const effect = (st && st.effect) || (z && z.effect) || "dry";
+    const prov = s.prov ? provByKey.get(s.prov) : null;
+    const country = D.countries[iso] || { summary: "", sources: [] };
+    const title = s.country ? countryName[iso] : s.city ? s.city.name : prov ? prov.properties.name : z ? z.name : countryName[iso];
+    const eyebrow = s.country ? "Country" : [s.city && prov ? prov.properties.name : null, countryName[iso]].filter(Boolean).join(" · ");
+
+    const sc = scopeOf(s);
+    const alerts = sc.alerts.filter(o => o.inCore || s.city).slice().sort((x, y) => (y.a.id === s.focusAlert) - (x.a.id === s.focusAlert));
+    const shown = alerts.slice(0, 4);
+    const alertHtml = alerts.length
+      ? `<ul class="list" style="margin:0 -18px">${shown.map(({ a, d }) => alertRow(a, d != null && s.city ? `<span>${d < 20 ? "Here" : Math.round(d / 5) * 5 + " km away"}</span>` : "", true, false)).join("")}</ul>${alerts.length > shown.length ? `<button class="back" data-tab="alerts">See all ${alerts.length} alerts →</button>` : ""}`
+      : '<p style="color:var(--muted)">No active alerts here right now.</p>';
+
+    const wkeys = s.country ? [...sc.core] : s.prov ? [s.prov] : (z ? zoneStats.get(z.id).keys : []);
+    const warns = wkeys.flatMap(k => provWarn.get(k) || []).sort((a, b) => sevRank[a.severity] - sevRank[b.severity]);
+    const warnHtml = warns.length ? `<div class="sec"><h3>Official weather warnings (${warns.length})</h3><ul class="wlist">${warns.map(w => `<li><span class="ic" style="background:var(${SEV[w.severity].c})">${svgIcon(w.kind, iconStroke(w.severity))}</span><span><b>${esc(SEV[w.severity].name)}: ${esc(KIND_NAMES[w.kind] || w.kind)}</b>${wkeys.length > 1 ? " · " + esc(w.prov.split("|")[1]) : ""}<small>${esc(w.headline || "")}${w.expires ? " · until " + esc(fmtTime(w.expires)) : ""} · ${warnSrc(w)}</small></span></li>`).join("")}</ul></div>` : "";
+    let fires = 0, change = 0, frp = 0, ftier = 0;
+    if (A && A.fires) wkeys.forEach(k => { const fi = fireInfo(k); fires += fi.count; frp += fi.frp; ftier = Math.max(ftier, fi.tier); change += (A.fires.change || {})[k] || 0; });
+    const fref = s.city ? { lat: s.city.lat, lng: s.city.lng } : prov ? { lat: prov._c[1], lng: prov._c[0] } : (z ? zoneStats.get(z.id).center : null);
+    const fireTxt = ["Small or scattered fires.", "Fires of some size.", "Large or intense fires.", "Very large or very intense fires."][ftier];
+    const fireHtml = fires ? `<div class="sec"><h3>Fire hotspots</h3><p class="note"><b>${esc(fireTxt)}</b> ${fires.toLocaleString("en-GB")} hotspots seen by satellite in the last 48 hours, giving off <b>${frp.toLocaleString("en-GB")} MW</b> of heat${change ? ` (${change > 0 ? "+" : ""}${change.toLocaleString("en-GB")} hotspots compared with the previous update)` : ""}. The level uses heat output, so one big fire counts more than many small ones. Source: ${ext(fref ? firmsLink(fref.lat, fref.lng) : FIRMS_SRC, "NASA FIRMS fire map")}.</p></div>` : "";
+    let fc = null, fcNote = "";
+    const ref = s.city ? { lat: s.city.lat, lng: s.city.lng } : prov ? { lat: prov._c[1], lng: prov._c[0] } : (z ? zoneStats.get(z.id).center : null);
+    if (ref && forecastList.length) {
+      let bd = 1e9; forecastList.forEach(f => { const d = km(ref, f); if (d < bd) { bd = d; fc = f; } });
+      if (bd > (s.city ? 120 : 300)) fc = null;
+      else if (!s.city || norm(fc.name) !== norm(s.city.name)) fcNote = "Forecast for " + fc.name + (bd > 15 ? ` (${Math.round(bd)} km away)` : "");
+    }
+    const FLAGS = { "heavy-rain": ["Heavy rain expected", "--wet2"], "heat": ["Extreme heat expected", "--dry3"], "unhealthy-air": ["Unhealthy air", "--dry2"] };
+    const aqiTxt = v => v >= 151 ? "unhealthy" : v >= 101 ? "unhealthy for sensitive groups" : v >= 51 ? "moderate" : "good";
+    const fcHtml = fc ? `<div class="sec"><h3>Next 7 days</h3>${fcNote ? `<p class="note">${esc(fcNote)}</p>` : ""}
+      ${fc.flags.length ? `<div class="flags">${fc.flags.map(f => `<span class="flag" style="background:color-mix(in srgb, var(${FLAGS[f][1]}) 25%, transparent)">${FLAGS[f][0]}</span>`).join("")}</div>` : ""}
+      <div class="fc">${(() => { const mx = Math.max(25, ...fc.days.map(d => d.rain || 0)); return fc.days.map(d => `<div><span>${esc(new Date(d.d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" }))}</span><span class="bw"><i class="b" style="height:${Math.round((d.rain || 0) / mx * 100)}%"></i></span><span class="mm">${Math.round(d.rain || 0)} mm</span><span class="t">${d.tmax != null ? Math.round(d.tmax) + "°" : ""}</span></div>`).join(""); })()}</div>
+      <p class="note">Rain over the next 7 days: <b>${Math.round(fc.rain7)} mm</b>${fc.aqiMax != null ? ` · Air quality index up to <b>${fc.aqiMax}</b> (${aqiTxt(fc.aqiMax)})` : ""}. Source: ${ext(`https://open-meteo.com/en/docs#latitude=${fc.lat}&longitude=${fc.lng}`, "Open-Meteo")}.</p></div>` : "";
+    const ems = ((A && A.ems) || []).filter(e => e.iso === iso);
+    const summary = country.summary ? "Across " + (countryName[iso] || "the country") + ": " + country.summary.charAt(0).toLowerCase() + country.summary.slice(1) : "";
+    const verdict = s.country
+      ? `<div class="verdict" style="background:${level ? rampColor(effect, level, .18) : "var(--surface-2)"}"><b>${esc(LEVELS[level])}</b> in the hardest-hit part of the country. ${esc(country.summary || "")} See the Hardest hit tab for each region.</div>`
+      : z
+      ? `<div class="verdict" style="background:${level ? rampColor(effect, level, .18) : "var(--surface-2)"}"><b>${esc(LEVELS[level])}.</b> ${esc(z.effect === "wet" ? "El Niño usually brings more rain and river floods to this area." : "El Niño usually brings less rain, more heat and a higher risk of fires and water shortages to this area.")}${s.prov ? ` Part of <b>${esc(z.name)}</b>.` : ""}</div>`
+      : `<div class="verdict" style="background:var(--surface-2)"><b>Little direct effect expected.</b> El Niño does not usually change the weather much here. ${esc(summary)}</div>`;
+
+    return `<div class="card">
+      <button class="back" data-back>← Whole world</button>
+      <div><span class="label">${esc(eyebrow)}</span><h2>${esc(title)}</h2>
+        <div class="status-row">${lvlChip(level, effect)}<span class="effect"><i style="width:10px;height:10px;border-radius:50%;background:${z ? rampColor(effect, 3, 1) : "var(--muted)"}"></i>${esc(z ? EFFECT[z.effect] : "No strong signal")}</span></div></div>
+      ${verdict}
+      ${z ? `<div class="sec"><h3>Right now</h3><p>${esc(z.now)}</p>${srcLine(zoneSources(z, 3), "Sources:")}</div>` : ""}
+      ${fcHtml}
+      ${warnHtml}
+      <div class="sec"><h3>${s.city ? "Alerts nearby" : "Active alerts"} (${alerts.length})</h3>${alertHtml}</div>
+      ${fireHtml}
+      ${z && z.next.length ? `<div class="sec"><h3>What's coming</h3><ul class="next">${z.next.map(n => `<li><b>${esc(n.when)}</b><span>${esc(n.text)}${n.sources ? " " + n.sources.map(([a, u]) => ext(u, a)).join(" · ") : ""}</span></li>`).join("")}</ul>${srcLine(zoneSources(z, 3), "Sources:")}</div>` : ""}
+      ${z && z.prepare.length ? `<div class="sec"><h3>How to prepare</h3><ul class="prep">${z.prepare.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>` : ""}
+      ${country.sources.length || ems.length ? `<div class="sec"><h3>Official sources to follow</h3><div class="srcs">${country.sources.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join("")}${ems.map(e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">Copernicus satellite map: ${esc(e.title)} ↗</a>`).join("")}</div></div>` : ""}
+    </div>`;
+  }
+
+  /* ---------- actions ---------- */
+  function countryStats(iso) {
+    let best = null; const al = new Map();
+    provinces.features.forEach(f => { if (f.properties.iso !== iso) return; const st = provStats.get(pkey(f)); if (!st) return; st.alerts.forEach(a => al.set(a.id, a)); if (!best || st.score > best.score) best = st; });
+    return best ? Object.assign({}, best, { alerts: [...al.values()] }) : null;
+  }
+  function select(s, view) {
+    sel = s; tab = "area"; renderPane(); paintGlobe(); renderTimeline();
+    if (globe && view) { globe.controls().autoRotate = false; globe.pointOfView(view, 1100); }
+    if (window.innerWidth < 960 && view) document.querySelector(".globe-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function openZone(id) {
+    const z = zoneById.get(id), st = zoneStats.get(id); if (!z) return;
+    select({ zone: id, iso: z.iso }, st.center ? { lat: st.center.lat, lng: st.center.lng, altitude: st.alt } : null);
+  }
+  function openProvince(f, fly) {
+    const k = pkey(f), st = provStats.get(k);
+    select({ prov: k, zone: st && st.zone ? st.zone.id : null, iso: f.properties.iso }, fly ? { lat: f._c[1], lng: f._c[0], altitude: 1.0 } : null);
+  }
+  function openProvKey(k) { const f = provByKey.get(k); if (f) openProvince(f, true); }
+  function openCity(c) {
+    const [name, iso, lat, lng] = c;
+    const f = provinceAt(lng, lat, iso);
+    const k = f ? pkey(f) : null, st = k ? provStats.get(k) : null;
+    select({ city: { name, lat, lng }, prov: k, zone: st && st.zone ? st.zone.id : null, iso }, { lat, lng, altitude: 0.75 });
+    document.getElementById("q").value = ""; closeResults();
+  }
+  function openAlert(id) {
+    const a = D.alerts.find(x => x.id === id); if (!a) return;
+    const f = provinceAt(a.lng, a.lat, a.iso), k = f ? pkey(f) : null, st = k ? provStats.get(k) : null;
+    select({ prov: k, zone: st && st.zone ? st.zone.id : null, iso: a.iso, focusAlert: id }, { lat: a.lat, lng: a.lng, altitude: 1.0 });
+  }
+  function back() { sel = null; if (tab === "area") tab = "hot"; renderPane(); paintGlobe(); renderTimeline(); if (globe) globe.pointOfView(VIEWS[region], 1000); }
+  function openCountry(iso) {
+    const ks = provinces.features.filter(f => f.properties.iso === iso); if (!ks.length) return;
+    let bb = [180, 90, -180, -90]; ks.forEach(f => { bb = [Math.min(bb[0], f._bb[0]), Math.min(bb[1], f._bb[1]), Math.max(bb[2], f._bb[2]), Math.max(bb[3], f._bb[3])]; });
+    const span = Math.max(bb[2] - bb[0], bb[3] - bb[1]);
+    select({ country: true, iso }, { lat: (bb[1] + bb[3]) / 2, lng: (bb[0] + bb[2]) / 2, altitude: Math.min(2.4, Math.max(0.8, span / 14)) });
+  }
+  function setRegion(r) {
+    region = r;
+    document.querySelectorAll(".rbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.region === r));
+    sel = null; if (tab === "area") tab = "hot"; renderPane(); paintGlobe(); renderTimeline();
+    if (globe) { globe.pointOfView(VIEWS[r], 1000); globe.controls().autoRotate = r === "all"; }
+  }
+
+  /* ---------- search ---------- */
+  let hits = [], active = -1;
+  function search(qs) {
+    const q = norm(qs.trim()); if (q.length < 2) return [];
+    const out = [];
+    cities.forEach(c => { const n = norm(c[0]); if (n.startsWith(q) || n.includes(" " + q)) out.push({ kind: "city", c, score: (n === q ? 0 : n.startsWith(q) ? 1 : 2) - c[4] / 1e9 }); });
+    provinces.features.forEach(f => { const n = norm(f.properties.name); if (n.startsWith(q)) out.push({ kind: "prov", f, score: n === q ? 0.5 : 1.5 }); });
+    D.zones.forEach(z => { if (norm(z.name).includes(q)) out.push({ kind: "zone", z, score: 1.8 }); });
+    [...TRACKED].forEach(iso => { const n = norm(countryName[iso] || ""); if (n && (n.startsWith(q) || n.includes(" " + q))) out.push({ kind: "country", iso, score: n === q ? 0.2 : 0.9 }); });
+    return out.sort((a, b) => a.score - b.score).slice(0, 8);
+  }
+  function showResults() {
+    const ul = document.getElementById("results"), q = document.getElementById("q"), typed = q.value.trim().length >= 2;
+    if (!hits.length) {
+      ul.innerHTML = typed ? '<li aria-disabled="true"><span>No match in Latin America or Southeast Asia. Try a larger city nearby.</span></li>' : "";
+      ul.hidden = !typed; q.setAttribute("aria-expanded", String(typed)); return;
+    }
+    ul.innerHTML = hits.map((h, i) => {
+      const label = h.kind === "city" ? h.c[0] : h.kind === "prov" ? h.f.properties.name : h.kind === "country" ? countryName[h.iso] : h.z.name;
+      const kind = h.kind === "city" ? "City · " + (countryName[h.c[1]] || h.c[1]) : h.kind === "prov" ? "Region · " + (countryName[h.f.properties.iso] || "") : h.kind === "country" ? "Country" : "Area · " + (countryName[h.z.iso] || "");
+      return `<li role="option" id="opt${i}" data-i="${i}" aria-selected="${i === active}"><span>${esc(label)}</span><span class="kind">${esc(kind)}</span></li>`;
+    }).join("");
+    ul.hidden = false; q.setAttribute("aria-expanded", "true");
+    q.setAttribute("aria-activedescendant", active >= 0 ? "opt" + active : "");
+  }
+  function closeResults() { const ul = document.getElementById("results"); ul.hidden = true; hits = []; active = -1; document.getElementById("q").setAttribute("aria-expanded", "false"); }
+  function pick(h) {
+    if (!h) return;
+    if (h.kind === "city") return openCity(h.c);
+    if (h.kind === "prov") openProvince(h.f, true); else if (h.kind === "country") openCountry(h.iso); else openZone(h.z.id);
+    document.getElementById("q").value = ""; closeResults();
+  }
+
+  /* ---------- globe ---------- */
+  function markerData() {
+    // most severe last, so they are drawn on top
+    const list = layers.alerts ? D.alerts.slice().sort((a, b) => sevRank[b.severity] - sevRank[a.severity]).map(a => Object.assign({ _t: "alert" }, a)) : [];
+    if (layers.warn && A) (A.warnings || []).filter(w => w.severity !== "yellow").forEach(w => list.push({ _t: "warn", id: "w-" + w.prov + "-" + w.kind, lat: w.lat, lng: w.lng, severity: w.severity, kind: w.kind, prov: w.prov, title: `${SEV[w.severity].name}: ${KIND_NAMES[w.kind] || w.kind} (${w.prov.split("|")[1]})` }));
+    if (sel && sel.city) list.push({ _t: "pin", id: "pin", lat: sel.city.lat, lng: sel.city.lng, name: sel.city.name });
+    return list;
+  }
+  function selectedKeys() {
+    if (!sel) return new Set();
+    if (sel.prov) return new Set([sel.prov]);
+    if (sel.zone) return new Set(zoneStats.get(sel.zone).keys);
+    return new Set();
+  }
+  function capColor(f) {
+    if (f._world) return "rgba(0,0,0,0)";
+    const s = provStats.get(pkey(f));
+    return s && s.level ? rampColor(s.effect, s.level) : "rgba(255,255,255,0.03)";
+  }
+  function paintGlobe() {
+    if (!globe) return;
+    const hl = selectedKeys();
+    globe
+      .polygonCapColor(capColor)
+      .polygonStrokeColor(f => f._world ? "rgba(255,255,255,0.22)" : hl.has(pkey(f)) ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.28)")
+      .polygonAltitude(f => f._world ? 0.002 : hl.has(pkey(f)) ? 0.03 : 0.007)
+      .htmlElementsData(markerData());
+  }
+  function initGlobe() {
+    const el = document.getElementById("globe");
+    if (typeof Globe !== "function") { el.innerHTML = '<p class="empty" style="color:#cfdde3">The globe could not load. Check your connection and reload the page. The lists still work.</p>'; return; }
+    const worldOthers = world.features.filter(f => !TRACKED.has(f.properties.iso)).map(f => Object.assign({ _world: true }, f));
+    globe = Globe()(el)
+      .backgroundColor("rgba(0,0,0,0)")
+      .globeImageUrl("earth-blue-marble.jpg")
+      .bumpImageUrl("earth-topology.png")
+      .showAtmosphere(true).atmosphereColor("#7cc4ff").atmosphereAltitude(0.17)
+      .polygonsData(worldOthers.concat(provinces.features))
+      .polygonSideColor(() => "rgba(0,0,0,0.12)")
+      .polygonsTransitionDuration(400)
+      .polygonLabel(f => {
+        if (f._world) return "";
+        const s = provStats.get(pkey(f));
+        return `<div class="tip"><b>${esc(f.properties.name)}</b>, ${esc(countryName[f.properties.iso] || "")}<br>${s && s.level ? `${LEVELS[s.level]} · ${s.effect === "wet" ? "too much rain" : "drought, heat or fire"}` : "No strong El Niño signal"}${s && s.alerts.length ? `<br><span>${s.alerts.length} active alert${s.alerts.length > 1 ? "s" : ""}</span>` : ""}${s && s.warn.length ? `<br><span>${s.warn.length} official warning${s.warn.length > 1 ? "s" : ""}</span>` : ""}${s && s.top ? `<br><span>Worst: ${esc(s.top.t === "alert" ? s.top.a.title : s.top.t === "warn" ? "official " + SEV[s.top.sev].name.toLowerCase() + " (" + (KIND_NAMES[s.top.w.kind] || s.top.w.kind) + ")" : "intense fires")}</span>` : ""}${s && s.fires ? `<br><span>${s.fires.toLocaleString("en-GB")} fire hotspots, ${s.frp.toLocaleString("en-GB")} MW (48 h)</span>` : ""}<br><span>Click for details</span></div>`;
+      })
+      .onPolygonClick(f => { if (!f._world) openProvince(f, false); })
+      .htmlLat("lat").htmlLng("lng").htmlAltitude(d => d._t === "pin" ? 0.04 : 0.02)
+      .htmlElement(d => {
+        const e = document.createElement("div");
+        if (d._t === "pin") { e.className = "pin"; e.innerHTML = `<b>${esc(d.name)}</b><i></i>`; return e; }
+        if (d._t === "warn") {
+          e.className = "mk warn" + (d.severity === "red" ? " s-orange" : ""); e.style.background = `var(${SEV[d.severity].c})`;
+          e.innerHTML = svgIcon(d.kind, iconStroke(d.severity));
+          e.title = d.title; e.setAttribute("role", "button"); e.setAttribute("aria-label", d.title);
+          e.addEventListener("click", ev => { ev.stopPropagation(); openProvKey(d.prov); });
+          return e;
+        }
+        e.className = "mk s-" + d.severity + (newIds.has(d.id) ? " new" : "");
+        e.style.background = `var(${SEV[d.severity].c})`; e.style.color = `var(${SEV[d.severity].c})`;
+        e.innerHTML = svgIcon(d.type, iconStroke(d.severity));
+        e.title = d.title; e.setAttribute("role", "button"); e.setAttribute("aria-label", d.title);
+        e.addEventListener("click", ev => { ev.stopPropagation(); openAlert(d.id); });
+        return e;
+      });
+    const mat = globe.globeMaterial(); mat.bumpScale = 6; if (mat.shininess !== undefined) mat.shininess = 6;
+    new ResizeObserver(() => globe.width(el.clientWidth).height(el.clientHeight)).observe(el);
+    globe.controls().autoRotateSpeed = 0.35;
+    paintGlobe();
+    globe.pointOfView(VIEWS[region], 0);
+  }
+
+  /* ---------- globe background: map or satellite, plus fire hotspots ---------- */
+  const imgCache = {};
+  function loadImg(src) {
+    if (!imgCache[src]) imgCache[src] = new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+    return imgCache[src];
+  }
+  let texToken = 0;
+  function updWhen() {
+    const sat = (A && A.satellite) || {}, el = document.getElementById("satwhen");
+    const parts = [view === "map" ? "Map: NASA Blue Marble" : sat[view] ? `NASA satellite image, ${fmtDate(sat[view].date)}` : ""];
+    if (layers.fires && A && A.fires) parts.push(`Fires: NASA FIRMS, last 48 h`);
+    el.textContent = parts.filter(Boolean).join(" · ");
+  }
+  async function buildTexture() {
+    if (!globe) return;
+    const tok = ++texToken, sat = (A && A.satellite) || {};
+    const baseSrc = view === "truecolor" && sat.truecolor ? sat.truecolor.file : "earth-blue-marble.jpg";
+    const overlay = (view === "smoke" || view === "rain") && sat[view] ? sat[view].file : null;
+    const fires = layers.fires && A && A.fires ? A.fires.grid : null;
+    updWhen();
+    if (!overlay && !fires && baseSrc === "earth-blue-marble.jpg") { globe.globeImageUrl(baseSrc); return; }
+    try {
+      const W = 4096, H = 2048, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+      const ctx = cv.getContext("2d");
+      ctx.drawImage(await loadImg(baseSrc), 0, 0, W, H);
+      if (overlay) { ctx.fillStyle = "rgba(0,0,0,.45)"; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 0.8; ctx.drawImage(await loadImg(overlay), 0, 0, W, H); ctx.globalAlpha = 1; }
+      if (fires) {
+        // size and colour by fire heat output (FRP, MW), so a few huge fires stand out over many small ones
+        fires.slice().sort((a, b) => (a[3] || 0) - (b[3] || 0)).forEach(([lat, lng, n, frp]) => {
+          const p = frp != null ? frp : n * 4;
+          const x = (lng + 180) / 360 * W, y = (90 - lat) / 180 * H, r = 1 + Math.sqrt(p) * 0.13;
+          ctx.fillStyle = p >= 1000 ? "rgba(255,40,20,0.95)" : p >= 200 ? "rgba(255,110,30,0.9)" : "rgba(255,190,70,0.75)";
+          ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+        });
+      }
+      if (tok !== texToken) return;
+      globe.globeImageUrl(cv.toDataURL("image/jpeg", 0.9));
+    } catch (e) { globe.globeImageUrl("earth-blue-marble.jpg"); }
+  }
+  function renderLive() {
+    const up = document.getElementById("liveupd"), el = document.getElementById("livesrc");
+    if (!A) { up.textContent = "Live data is not available right now. The map shows the last reviewed information."; return; }
+    up.innerHTML = "Collected automatically on <b>" + esc(fmtTime(A.generated)) + "</b> (your local time). Areas, forecasts by season and advice are reviewed by hand.";
+    el.innerHTML = Object.entries(A.sources || {}).map(([n, s]) => `<span class="${s.ok ? "ok" : "err"}">${esc(n)}${s.ok ? "" : " · not available in this update"}</span>`).join("");
+    const sat = A.satellite || {};
+    document.querySelectorAll("#views button").forEach(b => { if (b.dataset.view !== "map" && !sat[b.dataset.view]) b.disabled = true; });
+  }
+
+  /* ---------- new alerts ---------- */
+  function markNew() {
+    let seen = null;
+    try { seen = JSON.parse(localStorage.getItem("ninowatch-seen") || "null"); } catch (e) { seen = null; }
+    const upd = new Date(A ? A.generated : D.updated);
+    D.alerts.forEach(a => {
+      const isNew = Array.isArray(seen) ? !seen.includes(a.id) : (upd - new Date((a.firstSeen || a.date) + "T00:00:00Z")) / 864e5 <= 2;
+      if (isNew) newIds.add(a.id);
+    });
+    try { localStorage.setItem("ninowatch-seen", JSON.stringify(D.alerts.map(a => a.id))); } catch (e) { /* storage unavailable */ }
+    const pill = document.getElementById("newpill");
+    pill.hidden = !newIds.size;
+    pill.querySelector("span").textContent = newIds.size + " new alert" + (newIds.size === 1 ? "" : "s");
+  }
+
+  /* ---------- wiring ---------- */
+  function wire() {
+    document.querySelectorAll(".rbtn").forEach(b => b.addEventListener("click", () => setRegion(b.dataset.region)));
+    const showTab = t => { tab = t; renderPane(); };
+    document.getElementById("t-area").addEventListener("click", () => showTab("area"));
+    document.getElementById("scope").addEventListener("click", e => { if (e.target.closest("[data-clearscope]")) back(); });
+    document.getElementById("coming").addEventListener("click", e => { if (e.target.closest("[data-clearscope]")) back(); });
+    document.getElementById("t-hot").addEventListener("click", () => showTab("hot"));
+    document.getElementById("t-alerts").addEventListener("click", () => showTab("alerts"));
+    document.getElementById("t-warn").addEventListener("click", () => showTab("warn"));
+    document.getElementById("newpill").addEventListener("click", () => { if (sel) back(); showTab("alerts"); });
+    [["l-alerts", "alerts"], ["l-warn", "warn"], ["l-fires", "fires"]].forEach(([id, k]) => {
+      document.getElementById(id).addEventListener("change", e => { layers[k] = e.target.checked; paintGlobe(); if (k === "fires") buildTexture(); });
+    });
+    document.querySelectorAll("#views button").forEach(b => b.addEventListener("click", () => {
+      view = b.dataset.view;
+      document.querySelectorAll("#views button").forEach(x => x.setAttribute("aria-pressed", x === b));
+      buildTexture();
+    }));
+    if (window.innerWidth < 560) document.getElementById("layers").open = false;
+    const pane = document.getElementById("pane");
+    const act = e => {
+      if (e.target.closest("a")) return;
+      if (e.target.closest("[data-back]")) return back();
+      const tb = e.target.closest("[data-tab]"); if (tb) return showTab(tb.dataset.tab);
+      const gp = e.target.closest("[data-goprov]"); if (gp) return openProvKey(gp.dataset.goprov);
+      const al = e.target.closest("[data-alert]"); if (al && !sel) return openAlert(al.dataset.alert);
+      const zr = e.target.closest("[data-zone]"); if (zr) return openZone(zr.dataset.zone);
+      const pr = e.target.closest("[data-prov]"); if (pr && !sel) return openProvKey(pr.dataset.prov);
+    };
+    pane.addEventListener("click", act);
+    pane.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && !e.target.closest("button,a")) { e.preventDefault(); act(e); } });
+    document.getElementById("steps").addEventListener("click", e => { if (e.target.closest("a")) return; const b = e.target.closest("[data-zone]"); if (b) openZone(b.dataset.zone); });
+    const q = document.getElementById("q");
+    q.addEventListener("input", () => { hits = search(q.value); active = hits.length ? 0 : -1; showResults(); });
+    q.addEventListener("keydown", e => {
+      if (e.key === "ArrowDown") { e.preventDefault(); if (hits.length) { active = (active + 1) % hits.length; showResults(); } }
+      else if (e.key === "ArrowUp") { e.preventDefault(); if (hits.length) { active = (active - 1 + hits.length) % hits.length; showResults(); } }
+      else if (e.key === "Enter") { e.preventDefault(); pick(hits[Math.max(0, active)]); }
+      else if (e.key === "Escape") closeResults();
+    });
+    document.getElementById("results").addEventListener("mousedown", e => { const li = e.target.closest("[data-i]"); if (li) { e.preventDefault(); pick(hits[+li.dataset.i]); } });
+    q.addEventListener("blur", () => setTimeout(closeResults, 150));
+  }
+
+  async function init() {
+    [D, provinces, world, cities] = await Promise.all([
+      fetch("data.json", { cache: "no-store" }).then(r => r.json()),
+      fetch("provinces.geojson").then(r => r.json()),
+      fetch("countries.geojson").then(r => r.json()),
+      fetch("cities.json").then(r => r.json())
+    ]);
+    A = await fetch("auto.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+    buildModel();
+    renderLive();
+    markNew();
+    renderHeader();
+    renderTimeline();
+    renderPane();
+    wire();
+    initGlobe();
+    buildTexture();
+  }
+  init().catch(err => {
+    console.error(err);
+    document.getElementById("pane").innerHTML = '<p class="empty">The data could not load. Reload the page to try again.</p>';
+  });
+})();
+</script>
