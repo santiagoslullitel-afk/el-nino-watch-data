@@ -1,0 +1,2482 @@
+{
+ "updated": "2026-10-20T17:00:00Z",
+ "headline": {
+  "strength": 4,
+  "strengthLabel": "Very strong",
+  "text": "A very strong El Niño is under way, close to the 1997–98 record. It should peak around December, and its effects on rain, drought and heat will last into mid-2027.",
+  "peak": "Peak expected Nov 2026 – Jan 2027",
+  "source": "NOAA Climate Prediction Center, 8 Oct 2026",
+  "sourceUrl": "https://cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc_Sp.shtml"
+ },
+ "zones": [
+  {
+   "id": "arg-litoral",
+   "iso": "ARG",
+   "name": "Northeast Argentina (Litoral)",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Corrientes",
+    "Entre Ríos",
+    "Misiones",
+    "Chaco",
+    "Formosa",
+    "Santa Fe"
+   ],
+   "now": "The Paraná and Uruguay rivers are in flood. Two people died in Corrientes on 19 October and families have been evacuated in Corrientes, Entre Ríos and Chaco. The Iguazú is running at ten times its normal flow.",
+   "next": [
+    {
+     "when": "Next weeks",
+     "text": "The Uruguay River at Concordia is forecast to pass its 12.5 m evacuation level. Rain stays above normal, with up to 260 mm in intense episodes."
+    },
+    {
+     "when": "Around 20 Nov",
+     "text": "The Paraná at Corrientes is forecast to peak near 6 m, half a metre below the alert level."
+    },
+    {
+     "when": "Jan – Apr 2027",
+     "text": "In past strong El Niños the worst floods came in late summer and autumn, once the ground was already soaked."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below.",
+    "If you keep livestock or stock near the river, move it to higher ground early."
+   ]
+  },
+  {
+   "id": "arg-pampa",
+   "iso": "ARG",
+   "name": "Buenos Aires and the Pampas",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Buenos Aires",
+    "Ciudad de Buenos Aires",
+    "Córdoba",
+    "La Pampa"
+   ],
+   "now": "Soils in Buenos Aires province are about 95% saturated, so heavy rain quickly floods fields and rural roads.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "30–70% chance of more rain than normal, especially in western Buenos Aires province."
+    },
+    {
+     "when": "Summer",
+     "text": "Strong storms are likely. In Greater Buenos Aires, street flooding will depend on how intense each storm is and how drains cope."
+    }
+   ],
+   "prepare": [
+    "Clear gutters and drains before storms.",
+    "Follow storm alerts from the SMN.",
+    "In rural areas, plan around waterlogged roads.",
+    "Wetter soils are good news for most crops this season."
+   ]
+  },
+  {
+   "id": "arg-patagonia",
+   "iso": "ARG",
+   "name": "Northern Patagonia",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Neuquén",
+    "Río Negro"
+   ],
+   "now": "Among the highest odds in the country of more rain than normal this season.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "Above-normal rain likely. Watch for local flooding in valleys."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "arg-noa",
+   "iso": "ARG",
+   "name": "Northwest Argentina",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Salta",
+    "Jujuy",
+    "Tucumán",
+    "Catamarca",
+    "La Rioja",
+    "Santiago del Estero"
+   ],
+   "now": "The driest region this season. Few significant rains since March.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "The lowest odds of rain in the country. The water deficit could worsen if temperatures run high."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "ury-river",
+   "iso": "URY",
+   "name": "Uruguay River coast",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Artigas",
+    "Salto",
+    "Paysandú",
+    "Río Negro",
+    "Soriano"
+   ],
+   "now": "The Uruguay River is high. Border crossings with Argentina were closed as a precaution.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "Rain well above average. High risk of river floods reaching crops, roads and trade routes."
+    },
+    {
+     "when": "Jan – Apr 2027",
+     "text": "Flood risk stays high while soils remain saturated."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "ury-rest",
+   "iso": "URY",
+   "name": "Rest of Uruguay",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Rain above average. Good for soil moisture, with some local flooding.",
+   "next": [
+    {
+     "when": "Oct – Feb",
+     "text": "More rain than normal is likely."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "pry-parana",
+   "iso": "PRY",
+   "name": "Paraná and Paraguay river basin",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Alto Paraná",
+    "Itapúa",
+    "Misiones",
+    "Ñeembucú",
+    "Central",
+    "Asunción",
+    "Presidente Hayes",
+    "Canindeyú"
+   ],
+   "now": "Extraordinary river rises. About 1,000 families evacuated in Ciudad del Este, plus evacuations in Misiones and Ñeembucú. Itaipú and Yacyretá have opened their gates.",
+   "next": [
+    {
+     "when": "Next weeks",
+     "text": "Rivers stay high while rain continues in southern Brazil, where the Paraná and Paraguay rise."
+    },
+    {
+     "when": "Jan – Apr 2027",
+     "text": "Peak flood season in strong El Niño years."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "pry-rest",
+   "iso": "PRY",
+   "name": "Rest of Paraguay",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Wetter than normal.",
+   "next": [
+    {
+     "when": "Oct – Feb",
+     "text": "More rain than normal is likely."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "bra-south",
+   "iso": "BRA",
+   "name": "Southern Brazil",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Rio Grande do Sul",
+    "Santa Catarina",
+    "Paraná"
+   ],
+   "now": "Severe floods: more than 527,000 people affected in 146 municipalities of Rio Grande do Sul, with deaths and thousands displaced.",
+   "next": [
+    {
+     "when": "Oct – Nov",
+     "text": "Rain stays well above average. Heavy rain and flooding are the main risk."
+    },
+    {
+     "when": "Summer",
+     "text": "More flood episodes are likely while El Niño stays strong."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "bra-centre-west",
+   "iso": "BRA",
+   "name": "São Paulo and Mato Grosso do Sul",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "São Paulo",
+    "Mato Grosso do Sul"
+   ],
+   "now": "Orange alerts for heavy rain in parts of the Centre-West and Southeast.",
+   "next": [
+    {
+     "when": "Oct – Nov",
+     "text": "Above-average rain in some areas."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "bra-amazon",
+   "iso": "BRA",
+   "name": "Brazilian Amazon",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Amazonas",
+    "Acre",
+    "Roraima",
+    "Amapá",
+    "Pará",
+    "Rondônia",
+    "Tocantins"
+   ],
+   "now": "Fires in Amazonas are up 253% in early October. More than 36 municipalities are in emergency and Manaus suspended classes because of smoke.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "Below-average rain and high heat. The rainy season may start late, keeping fire risk high."
+    },
+    {
+     "when": "Dec – Feb",
+     "text": "The most dangerous period for extreme heat."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early.",
+    "Low rivers can cut boat transport and supplies; plan ahead."
+   ]
+  },
+  {
+   "id": "bra-centre",
+   "iso": "BRA",
+   "name": "Central Brazil",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Mato Grosso",
+    "Goiás",
+    "Distrito Federal",
+    "Minas Gerais",
+    "Espírito Santo",
+    "Maranhão"
+   ],
+   "now": "Below-normal rain and heat raise fire risk.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "Drier and hotter than normal. The rainy season may start late."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "bra-northeast",
+   "iso": "BRA",
+   "name": "Northeast Brazil",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Piauí",
+    "Ceará",
+    "Rio Grande do Norte",
+    "Paraíba",
+    "Pernambuco",
+    "Alagoas",
+    "Sergipe",
+    "Bahia"
+   ],
+   "now": "Low humidity and risk of water stress.",
+   "next": [
+    {
+     "when": "Summer 2027",
+     "text": "El Niño usually brings a drier rainy season to the Northeast."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "bol-lowlands",
+   "iso": "BOL",
+   "name": "Eastern lowlands",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Santa Cruz",
+    "El Beni",
+    "Pando"
+   ],
+   "now": "River overflows in Santa Cruz flooded more than 15,000 hectares of crops.",
+   "next": [
+    {
+     "when": "Dec – Mar",
+     "text": "More flood episodes are possible during the rainy season."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "bol-highlands",
+   "iso": "BOL",
+   "name": "Altiplano and valleys",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "La Paz",
+    "Oruro",
+    "Potosí",
+    "Chuquisaca",
+    "Tarija",
+    "Cochabamba"
+   ],
+   "now": "Rain deficit in the western and southern Altiplano; extreme heat in the Chaco.",
+   "next": [
+    {
+     "when": "By year end",
+     "text": "The chance of a water deficit rises from 28% to 66%."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "per-north",
+   "iso": "PER",
+   "name": "Northern coast of Peru",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Tumbes",
+    "Piura",
+    "Lambayeque",
+    "La Libertad"
+   ],
+   "now": "The sea off the coast is about 4.5 °C warmer than normal. Peru's El Niño committee (ENFEN) keeps its coastal El Niño alert and calls the event “extraordinary”. Heavy rain has already hit Tumbes.",
+   "next": [
+    {
+     "when": "From December",
+     "text": "Extreme rain expected: 250–300 mm where 20–30 mm is normal. Risk of floods and mudslides (huaicos)."
+    },
+    {
+     "when": "Jan – Mar 2027",
+     "text": "Rain stays well above normal through the summer."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below.",
+    "Check whether your home is near a dry riverbed (quebrada); these can flood suddenly."
+   ]
+  },
+  {
+   "id": "per-central",
+   "iso": "PER",
+   "name": "Lima, central coast and northern highlands",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Áncash",
+    "Lima",
+    "Lima Province",
+    "Callao",
+    "Ica",
+    "Cajamarca"
+   ],
+   "now": "Unusual rain in Lima and rising temperatures. Lima expects higher power demand from heat waves.",
+   "next": [
+    {
+     "when": "Summer 2027",
+     "text": "Above-normal rain on the central coast and northeastern highlands. Mudslide risk on Lima's eastern slopes (Chosica, Chaclacayo)."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "per-andes",
+   "iso": "PER",
+   "name": "Southern Andes",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Puno",
+    "Cusco",
+    "Apurímac",
+    "Ayacucho",
+    "Huancavelica",
+    "Arequipa",
+    "Moquegua",
+    "Tacna"
+   ],
+   "now": "Water emergency declared in 707 districts of 17 departments as reservoirs fall.",
+   "next": [
+    {
+     "when": "Summer 2027",
+     "text": "Below-normal rain in the southeastern Andes and low flows in the Titicaca basin."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "per-amazon",
+   "iso": "PER",
+   "name": "Peruvian Amazon",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Loreto",
+    "Ucayali",
+    "Madre de Dios",
+    "San Martín",
+    "Amazonas",
+    "Huánuco",
+    "Junín",
+    "Pasco"
+   ],
+   "now": "Drought and rising daytime temperatures favour forest fires.",
+   "next": [
+    {
+     "when": "From November",
+     "text": "Amazon rivers expected at normal to below-normal levels."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "ecu-coast",
+   "iso": "ECU",
+   "name": "Ecuadorian coast",
+   "effect": "wet",
+   "base": 2,
+   "provinces": [
+    "Esmeraldas",
+    "Manabi",
+    "Santa Elena",
+    "Guayas",
+    "Los Rios",
+    "El Oro",
+    "Santo Domingo de los Tsáchilas"
+   ],
+   "now": "National red alert since 29 August. Since then, 3 deaths and 23,167 people affected. On 19 October about 50 areas flooded in Guayaquil, and classes moved online in flooded areas.",
+   "next": [
+    {
+     "when": "Nov – Dec",
+     "text": "The national weather service (INAMHI) expects the most intense and frequent rain of the season."
+    },
+    {
+     "when": "Early 2027",
+     "text": "Heavy rain continues while El Niño stays strong."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "ecu-sierra",
+   "iso": "ECU",
+   "name": "Central highlands (Sierra)",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Chimborazo",
+    "Tungurahua",
+    "Cotopaxi",
+    "Bolivar",
+    "Pichincha",
+    "Imbabura",
+    "Carchi",
+    "Azuay",
+    "Cañar",
+    "Loja"
+   ],
+   "now": "A wave of forest fires in Chimborazo and Tungurahua, driven by heat and drought.",
+   "next": [
+    {
+     "when": "Next weeks",
+     "text": "Fire risk stays high until steady rain arrives."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "col-andes",
+   "iso": "COL",
+   "name": "Andean and Caribbean Colombia",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Bogota",
+    "Cundinamarca",
+    "Boyacá",
+    "Santander",
+    "Norte de Santander",
+    "Antioquia",
+    "Caldas",
+    "Risaralda",
+    "Quindío",
+    "Tolima",
+    "Huila",
+    "Valle del Cauca",
+    "Atlántico",
+    "Bolívar",
+    "Magdalena",
+    "Cesar",
+    "La Guajira",
+    "Córdoba",
+    "Sucre"
+   ],
+   "now": "Much less rain than normal. Dozens of forest fires, water rationing in several municipalities and falling hydropower reservoirs. About 4.3 million people are exposed to supply cuts.",
+   "next": [
+    {
+     "when": "Dec – Mar",
+     "text": "The worst rain deficit is expected around December and into early 2027. More than 500 municipalities face a risk of water shortages."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below.",
+    "Expect possible water rationing; your local water utility will announce schedules."
+   ]
+  },
+  {
+   "id": "col-pacific",
+   "iso": "COL",
+   "name": "Colombian Pacific",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Chocó",
+    "Cauca",
+    "Nariño"
+   ],
+   "now": "Mixed: local river overflows in Quibdó and storm-surge alerts in Buenaventura, while the wider region expects less rain.",
+   "next": [
+    {
+     "when": "Dec – Mar",
+     "text": "Rain deficit expected."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "col-east",
+   "iso": "COL",
+   "name": "Eastern plains (Llanos)",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Meta",
+    "Casanare",
+    "Arauca",
+    "Vichada"
+   ],
+   "now": "Drier than normal; fire season approaching.",
+   "next": [
+    {
+     "when": "Dec – Mar",
+     "text": "Dry season likely harsher than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "ven-all",
+   "iso": "VEN",
+   "name": "Venezuela",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Unusual dryness, low rivers and falling reservoirs threaten the power supply. Dengue and malaria cases are rising.",
+   "next": [
+    {
+     "when": "Dec – Apr",
+     "text": "Dry season likely longer and hotter than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below.",
+    "Use mosquito protection; dengue rises in hot, dry periods when people store water."
+   ]
+  },
+  {
+   "id": "chl-central",
+   "iso": "CHL",
+   "name": "Central Chile",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Valparaíso",
+    "Región Metropolitana de Santiago",
+    "Libertador General Bernardo O'Higgins",
+    "Maule",
+    "Ñuble",
+    "Bío-Bío",
+    "Coquimbo"
+   ],
+   "now": "Heavy rain and river surges damaged roads and infrastructure.",
+   "next": [
+    {
+     "when": "Spring",
+     "text": "Late-season rain events remain possible."
+    }
+   ],
+   "prepare": [
+    "Know your evacuation route and the nearest shelter.",
+    "Keep documents, medicines and a charged phone in a waterproof bag.",
+    "Never cross a flooded street or river, on foot or by car.",
+    "Follow river and storm alerts from the official sources below."
+   ]
+  },
+  {
+   "id": "pan-canal",
+   "iso": "PAN",
+   "name": "Panama Canal and Azuero",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Panama",
+    "Colón",
+    "Coclé",
+    "Herrera",
+    "Los Santos",
+    "Veraguas"
+   ],
+   "now": "National emergency declared. Rain in the canal watershed was 34% below average, and daily canal transits were cut from 36 to 32.",
+   "next": [
+    {
+     "when": "Oct – Nov",
+     "text": "The last chance for reservoirs to refill before the dry season."
+    },
+    {
+     "when": "Dec – Apr 2027",
+     "text": "Dry season with less rain than normal. Further canal cuts and water restrictions are possible."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "cri-nw",
+   "iso": "CRI",
+   "name": "Northwest Costa Rica",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Guanacaste",
+    "Puntarenas"
+   ],
+   "now": "Rain deficit in Guanacaste.",
+   "next": [
+    {
+     "when": "Dec – Apr",
+     "text": "Dry season likely harsher than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "nic-pacific",
+   "iso": "NIC",
+   "name": "Pacific Nicaragua",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Chinandega",
+    "León",
+    "Managua",
+    "Masaya",
+    "Carazo",
+    "Granada",
+    "Rivas",
+    "Estelí",
+    "Madriz",
+    "Nueva Segovia"
+   ],
+   "now": "Rain deficit on the Pacific side.",
+   "next": [
+    {
+     "when": "Dec – Apr",
+     "text": "Dry season likely harsher than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "hnd-corridor",
+   "iso": "HND",
+   "name": "Honduran Dry Corridor",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Choluteca",
+    "Valle",
+    "La Paz",
+    "Comayagua",
+    "Francisco Morazán",
+    "El Paraíso",
+    "Intibucá",
+    "Lempira",
+    "Ocotepeque"
+   ],
+   "now": "103 municipalities on red alert for drought and 82 on yellow: 233 of 298 municipalities are under some drought alert. Crop losses and water shortages.",
+   "next": [
+    {
+     "when": "End of October",
+     "text": "Drought conditions return to more than 100 municipalities after brief rains."
+    },
+    {
+     "when": "2027 dry season",
+     "text": "Experts warn of extreme heat and a prolonged drought."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "slv-all",
+   "iso": "SLV",
+   "name": "El Salvador",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "*"
+   ],
+   "now": "National red alert for drought since late August. Harvests and day-labour income are hit hardest.",
+   "next": [
+    {
+     "when": "2027 dry season",
+     "text": "Prolonged drought and heat are likely."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "gtm-corridor",
+   "iso": "GTM",
+   "name": "Guatemalan Dry Corridor",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Chiquimula",
+    "Zacapa",
+    "El Progreso",
+    "Jalapa",
+    "Jutiapa",
+    "Baja Verapaz",
+    "Santa Rosa"
+   ],
+   "now": "Crop losses and poor access to water, among the most severe in the region.",
+   "next": [
+    {
+     "when": "2027 dry season",
+     "text": "Prolonged drought and heat are likely."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "mex-southeast",
+   "iso": "MEX",
+   "name": "Southeast Mexico",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Chiapas",
+    "Tabasco",
+    "Campeche",
+    "Yucatán",
+    "Quintana Roo",
+    "Oaxaca"
+   ],
+   "now": "Rain deficit this season.",
+   "next": [
+    {
+     "when": "Winter",
+     "text": "Fewer cold fronts reach the southeast; drier than normal."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "mex-north",
+   "iso": "MEX",
+   "name": "Northern Mexico",
+   "effect": "wet",
+   "base": 1,
+   "provinces": [
+    "Chihuahua",
+    "Coahuila",
+    "Nuevo León",
+    "Tamaulipas",
+    "Sonora",
+    "Durango"
+   ],
+   "now": "El Niño usually brings a colder, wetter winter here.",
+   "next": [
+    {
+     "when": "Winter",
+     "text": "More cold fronts, frost and possible snow in high areas."
+    }
+   ],
+   "prepare": [
+    "Prepare for cold snaps and frost.",
+    "Follow cold-front alerts from the SMN."
+   ]
+  },
+  {
+   "id": "idn-fires",
+   "iso": "IDN",
+   "name": "Kalimantan and southern Sumatra",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Kalimantan Tengah",
+    "Kalimantan Barat",
+    "Kalimantan Selatan",
+    "Kalimantan Timur",
+    "Sumatera Selatan",
+    "Riau",
+    "Jambi"
+   ],
+   "now": "Peat fires have burned for months, spreading toxic haze across the region. More than 5,000 hotspots in Central Kalimantan alone by late September and over 200,000 hectares burned.",
+   "next": [
+    {
+     "when": "Nov – Dec",
+     "text": "The rainy season starts late in most areas. Fires and haze continue until steady rain arrives."
+    },
+    {
+     "when": "Dec – Feb",
+     "text": "Peak rains; fires should die down, but watch for floods and landslides when rain begins."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early."
+   ]
+  },
+  {
+   "id": "idn-java",
+   "iso": "IDN",
+   "name": "Java, Bali and Nusa Tenggara",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Jawa Barat",
+    "Jawa Tengah",
+    "Jawa Timur",
+    "Yogyakarta",
+    "Bali",
+    "Nusa Tenggara Barat",
+    "Nusa Tenggara Timur",
+    "Banten",
+    "Jakarta Raya",
+    "Lampung"
+   ],
+   "now": "Long dry spells: more than 60 days without rain in 25 provinces, and 131 days in Bantul (Yogyakarta). Rice planting is delayed.",
+   "next": [
+    {
+     "when": "Nov – Dec",
+     "text": "The rainy season starts later and will be shorter than usual."
+    },
+    {
+     "when": "2027",
+     "text": "Lower rice harvests and possible price rises."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "idn-rest",
+   "iso": "IDN",
+   "name": "Rest of Indonesia",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "Sulawesi Barat",
+    "Sulawesi Selatan",
+    "Sulawesi Tengah",
+    "Sulawesi Tenggara",
+    "Sulawesi Utara",
+    "Gorontalo",
+    "Maluku",
+    "Maluku Utara",
+    "Bengkulu",
+    "Sumatera Barat",
+    "Bangka-Belitung",
+    "Kepulauan Riau"
+   ],
+   "now": "Drier than normal.",
+   "next": [
+    {
+     "when": "Nov – Dec",
+     "text": "Rainy season starts late."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "mys-haze",
+   "iso": "MYS",
+   "name": "Sarawak and southern Peninsula",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Sarawak",
+    "Johor",
+    "Negeri Sembilan",
+    "Melaka",
+    "Pahang",
+    "Selangor",
+    "Kuala Lumpur",
+    "Putrajaya"
+   ],
+   "now": "Haze from Indonesian fires closed schools in several states last week. Sarawak declared an emergency in September; asthma cases rose 259% in late August.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "Eastern Sabah turns dry. Haze continues while fires burn in Indonesia."
+    },
+    {
+     "when": "Early 2027",
+     "text": "Temperatures could reach 40 °C."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early."
+   ]
+  },
+  {
+   "id": "mys-rest",
+   "iso": "MYS",
+   "name": "Rest of Malaysia",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Drier than normal, with periods of haze.",
+   "next": [
+    {
+     "when": "Early 2027",
+     "text": "More rain-free days and heat toward the end of the monsoon."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early."
+   ]
+  },
+  {
+   "id": "sgp",
+   "iso": "SGP",
+   "name": "Singapore",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Haze drifting in from Indonesia. The government subsidises treatment for haze-related illness.",
+   "next": [
+    {
+     "when": "Next weeks",
+     "text": "Haze episodes continue until fires in Sumatra are out."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early."
+   ]
+  },
+  {
+   "id": "brn",
+   "iso": "BRN",
+   "name": "Brunei",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Haze and dry spells.",
+   "next": [
+    {
+     "when": "Next weeks",
+     "text": "Haze episodes possible."
+    }
+   ],
+   "prepare": [
+    "Check the air-quality index before going out.",
+    "When the air is unhealthy, stay indoors with windows shut and wear a well-fitting N95 mask outside.",
+    "Children, older people and anyone with asthma or heart problems should take extra care.",
+    "Avoid any open burning and report fires early."
+   ]
+  },
+  {
+   "id": "phl-luzon",
+   "iso": "PHL",
+   "name": "Northern and Central Luzon",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Ilocos Norte",
+    "Ilocos Sur",
+    "La Union",
+    "Pangasinan",
+    "Dagupan",
+    "Cagayan",
+    "Isabela",
+    "Nueva Vizcaya",
+    "Quirino",
+    "Batanes",
+    "Santiago",
+    "Aurora",
+    "Bataan",
+    "Bulacan",
+    "Nueva Ecija",
+    "Pampanga",
+    "Tarlac",
+    "Zambales",
+    "Angeles",
+    "Olongapo",
+    "Mindoro Occidental"
+   ],
+   "now": "The rice heartland expects the hardest hit. The monsoon has masked El Niño so far, but rainfall is now forecast to drop sharply.",
+   "next": [
+    {
+     "when": "Nov 2026 – May 2027",
+     "text": "Rainfall 40–60% below normal in Luzon. Up to 700,000 tonnes of rice output at risk."
+    },
+    {
+     "when": "By end of March",
+     "text": "The government expects every province to be in drought or very dry."
+    },
+    {
+     "when": "Mar – May 2027",
+     "text": "Heat index of 52–55 °C possible."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "phl-rest",
+   "iso": "PHL",
+   "name": "Rest of the Philippines",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "The government is preparing for higher power demand and lower hydropower output.",
+   "next": [
+    {
+     "when": "Nov 2026 – May 2027",
+     "text": "Rainfall 40–60% below normal in the Visayas and 60–80% below normal in Mindanao."
+    },
+    {
+     "when": "By end of March",
+     "text": "Every province expected to be in drought or very dry."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "vnm-south",
+   "iso": "VNM",
+   "name": "Mekong Delta, Central Highlands and south-central coast",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "An Giang",
+    "Bạc Liêu",
+    "Bến Tre",
+    "Can Tho",
+    "Cà Mau",
+    "Hau Giang",
+    "Kiên Giang",
+    "Long An",
+    "Sóc Trăng",
+    "Tiền Giang",
+    "Trà Vinh",
+    "Vĩnh Long",
+    "Ðong Tháp",
+    "Gia Lai",
+    "Kon Tum",
+    "Đắk Lắk",
+    "Đắk Nông",
+    "Lâm Đồng",
+    "Ninh Thuận",
+    "Bình Thuận",
+    "Khánh Hòa",
+    "Phú Yên",
+    "Bình Định"
+   ],
+   "now": "Rainy season rainfall 20–40% below normal. Authorities urge local governments to fill reservoirs now.",
+   "next": [
+    {
+     "when": "Early 2027",
+     "text": "Water shortages peak in the Central Highlands, threatening coffee, pepper and rice."
+    },
+    {
+     "when": "Feb – Apr 2027",
+     "text": "Saltwater intrusion in the Mekong Delta, possibly up to 70 km inland in the worst case."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below.",
+    "In the Mekong Delta, store fresh water before the salty season."
+   ]
+  },
+  {
+   "id": "vnm-rest",
+   "iso": "VNM",
+   "name": "Rest of Vietnam",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Rainy season ending early.",
+   "next": [
+    {
+     "when": "Early 2027",
+     "text": "Early heat and water shortages."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "tha",
+   "iso": "THA",
+   "name": "Thailand",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Main reservoirs are expected to hold about a third less water than a year ago by 1 November. Upper Thailand is most at risk.",
+   "next": [
+    {
+     "when": "Oct – Dec",
+     "text": "El Niño peaks; dry spells likely."
+    },
+    {
+     "when": "Jan – May 2027",
+     "text": "Water shortages, heat and PM2.5 pollution in the dry season."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "khm",
+   "iso": "KHM",
+   "name": "Cambodia",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Drought threatens crops and hydropower.",
+   "next": [
+    {
+     "when": "Jan – May 2027",
+     "text": "Dry season likely harsher than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "lao",
+   "iso": "LAO",
+   "name": "Laos",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Dry conditions and likely water shortages.",
+   "next": [
+    {
+     "when": "Jan – May 2027",
+     "text": "Dry season likely harsher than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "mmr",
+   "iso": "MMR",
+   "name": "Myanmar",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Unseasonal heat wave; residents warned to expect power cuts and drinking-water shortages.",
+   "next": [
+    {
+     "when": "Mar – May 2027",
+     "text": "Hot season likely more extreme than usual."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "tls",
+   "iso": "TLS",
+   "name": "Timor-Leste",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "*"
+   ],
+   "now": "Drought risk and a delayed rainy season.",
+   "next": [
+    {
+     "when": "Nov – Mar",
+     "text": "Food and water shortages possible."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "png-highlands",
+   "iso": "PNG",
+   "name": "Papua New Guinea highlands",
+   "effect": "dry",
+   "base": 2,
+   "provinces": [
+    "Enga",
+    "Western Highlands",
+    "Southern Highlands",
+    "Eastern Highlands",
+    "Chimbu"
+   ],
+   "now": "In strong El Niños, the highlands suffer drought and frost that destroy food gardens.",
+   "next": [
+    {
+     "when": "Nov – Mar",
+     "text": "Food and water shortages possible."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  },
+  {
+   "id": "png-rest",
+   "iso": "PNG",
+   "name": "Rest of Papua New Guinea",
+   "effect": "dry",
+   "base": 1,
+   "provinces": [
+    "*"
+   ],
+   "now": "Drier than normal.",
+   "next": [
+    {
+     "when": "Nov – Mar",
+     "text": "Water shortages possible."
+    }
+   ],
+   "prepare": [
+    "Save water and keep a few days of drinking water in case of supply cuts.",
+    "Avoid any open burning and report fires early.",
+    "On very hot days, avoid outdoor effort between 11:00 and 16:00 and drink water often.",
+    "Follow drought and water-supply notices from the official sources below."
+   ]
+  }
+ ],
+ "countries": {
+  "ARG": {
+   "summary": "Floods in the northeast along the Paraná and Uruguay rivers; more rain than normal in the Pampas; a dry northwest.",
+   "sources": [
+    [
+     "SMN (weather service)",
+     "https://www.smn.gob.ar"
+    ],
+    [
+     "INA (river levels)",
+     "https://www.ina.gob.ar"
+    ]
+   ]
+  },
+  "URY": {
+   "summary": "Wetter than normal; flood risk along the Uruguay River.",
+   "sources": [
+    [
+     "INUMET",
+     "https://www.inumet.gub.uy"
+    ],
+    [
+     "SINAE (emergencies)",
+     "https://www.gub.uy/sistema-nacional-emergencias"
+    ]
+   ]
+  },
+  "PRY": {
+   "summary": "Extraordinary rises on the Paraná and Paraguay rivers.",
+   "sources": [
+    [
+     "DMH (weather service)",
+     "https://www.meteorologia.gov.py"
+    ],
+    [
+     "SEN (emergencies)",
+     "https://www.sen.gov.py"
+    ]
+   ]
+  },
+  "BRA": {
+   "summary": "Floods in the South; drought, fires and heat in the Amazon, Centre and Northeast.",
+   "sources": [
+    [
+     "INMET",
+     "https://portal.inmet.gov.br"
+    ],
+    [
+     "CEMADEN",
+     "https://www.gov.br/cemaden"
+    ]
+   ]
+  },
+  "BOL": {
+   "summary": "Floods in the eastern lowlands; drought on the Altiplano.",
+   "sources": [
+    [
+     "SENAMHI Bolivia",
+     "https://senamhi.gob.bo"
+    ]
+   ]
+  },
+  "PER": {
+   "summary": "Extreme rain expected on the northern coast from December; drought in the southern Andes and Amazon.",
+   "sources": [
+    [
+     "SENAMHI",
+     "https://www.senamhi.gob.pe"
+    ],
+    [
+     "INDECI (civil defence)",
+     "https://www.gob.pe/indeci"
+    ]
+   ]
+  },
+  "ECU": {
+   "summary": "National red alert; floods on the coast, fires in the highlands.",
+   "sources": [
+    [
+     "INAMHI",
+     "https://www.inamhi.gob.ec"
+    ],
+    [
+     "Risk Management Secretariat",
+     "https://www.gestionderiesgos.gob.ec"
+    ]
+   ]
+  },
+  "COL": {
+   "summary": "Severe rain deficit, fires and water rationing in the Andean and Caribbean regions.",
+   "sources": [
+    [
+     "IDEAM",
+     "https://www.ideam.gov.co"
+    ],
+    [
+     "UNGRD (disaster risk)",
+     "https://portal.gestiondelriesgo.gov.co"
+    ]
+   ]
+  },
+  "VEN": {
+   "summary": "Drought, low reservoirs and risk to the power supply.",
+   "sources": [
+    [
+     "INAMEH",
+     "http://www.inameh.gob.ve"
+    ]
+   ]
+  },
+  "CHL": {
+   "summary": "Wetter than normal in central Chile.",
+   "sources": [
+    [
+     "Dirección Meteorológica",
+     "https://www.meteochile.gob.cl"
+    ],
+    [
+     "SENAPRED",
+     "https://senapred.cl"
+    ]
+   ]
+  },
+  "PAN": {
+   "summary": "Drought threatens the Panama Canal and water supply.",
+   "sources": [
+    [
+     "IMHPA",
+     "https://www.imhpa.gob.pa"
+    ],
+    [
+     "Panama Canal Authority",
+     "https://pancanal.com"
+    ]
+   ]
+  },
+  "CRI": {
+   "summary": "Drier northwest.",
+   "sources": [
+    [
+     "IMN",
+     "https://www.imn.ac.cr"
+    ]
+   ]
+  },
+  "NIC": {
+   "summary": "Drier Pacific side.",
+   "sources": [
+    [
+     "INETER",
+     "https://www.ineter.gob.ni"
+    ]
+   ]
+  },
+  "HND": {
+   "summary": "Drought in the Dry Corridor; crop losses and water shortages.",
+   "sources": [
+    [
+     "COPECO",
+     "https://copeco.gob.hn"
+    ]
+   ]
+  },
+  "SLV": {
+   "summary": "National drought red alert.",
+   "sources": [
+    [
+     "MARN",
+     "https://www.marn.gob.sv"
+    ],
+    [
+     "Protección Civil",
+     "https://www.proteccioncivil.gob.sv"
+    ]
+   ]
+  },
+  "GTM": {
+   "summary": "Drought in the Dry Corridor.",
+   "sources": [
+    [
+     "INSIVUMEH",
+     "https://insivumeh.gob.gt"
+    ],
+    [
+     "CONRED",
+     "https://conred.gob.gt"
+    ]
+   ]
+  },
+  "MEX": {
+   "summary": "Drier southeast; colder and wetter winter in the north.",
+   "sources": [
+    [
+     "SMN (Conagua)",
+     "https://smn.conagua.gob.mx"
+    ]
+   ]
+  },
+  "IDN": {
+   "summary": "Fires and haze in Kalimantan and Sumatra; long dry spells in Java and Nusa Tenggara.",
+   "sources": [
+    [
+     "BMKG",
+     "https://www.bmkg.go.id"
+    ],
+    [
+     "BNPB (disasters)",
+     "https://bnpb.go.id"
+    ]
+   ]
+  },
+  "MYS": {
+   "summary": "Haze from Indonesian fires; dry spells and heat.",
+   "sources": [
+    [
+     "MetMalaysia",
+     "https://www.met.gov.my"
+    ],
+    [
+     "Air quality (APIMS)",
+     "https://eqms.doe.gov.my"
+    ]
+   ]
+  },
+  "SGP": {
+   "summary": "Haze episodes.",
+   "sources": [
+    [
+     "NEA haze updates",
+     "https://www.haze.gov.sg"
+    ]
+   ]
+  },
+  "BRN": {
+   "summary": "Haze and dry spells.",
+   "sources": [
+    [
+     "ASEAN haze centre",
+     "https://asmc.asean.org"
+    ]
+   ]
+  },
+  "PHL": {
+   "summary": "Drought expected to reach every province by March; power and rice at risk.",
+   "sources": [
+    [
+     "PAGASA",
+     "https://www.pagasa.dost.gov.ph"
+    ],
+    [
+     "NDRRMC",
+     "https://ndrrmc.gov.ph"
+    ]
+   ]
+  },
+  "VNM": {
+   "summary": "Drought in the south and Central Highlands; saltwater intrusion in the Mekong Delta from February.",
+   "sources": [
+    [
+     "NCHMF (weather service)",
+     "https://nchmf.gov.vn"
+    ]
+   ]
+  },
+  "THA": {
+   "summary": "Lower reservoirs and dry-season water shortages.",
+   "sources": [
+    [
+     "Thai Meteorological Department",
+     "https://www.tmd.go.th"
+    ]
+   ]
+  },
+  "KHM": {
+   "summary": "Drought risk for crops and hydropower.",
+   "sources": [
+    [
+     "ASEAN climate centre",
+     "https://asmc.asean.org"
+    ]
+   ]
+  },
+  "LAO": {
+   "summary": "Dry conditions and water shortages.",
+   "sources": [
+    [
+     "ASEAN climate centre",
+     "https://asmc.asean.org"
+    ]
+   ]
+  },
+  "MMR": {
+   "summary": "Heat, drought and power cuts.",
+   "sources": [
+    [
+     "ASEAN climate centre",
+     "https://asmc.asean.org"
+    ]
+   ]
+  },
+  "TLS": {
+   "summary": "Drought and delayed rains.",
+   "sources": [
+    [
+     "ASEAN climate centre",
+     "https://asmc.asean.org"
+    ]
+   ]
+  },
+  "PNG": {
+   "summary": "Drought and frost risk in the highlands.",
+   "sources": []
+  }
+ },
+ "alerts": [
+  {
+   "id": "ecu-floods-1019",
+   "iso": "ECU",
+   "type": "flood",
+   "severity": "red",
+   "date": "2026-10-19",
+   "lat": -2.19,
+   "lng": -79.89,
+   "place": "Guayas, El Oro, Los Ríos, Bolívar",
+   "title": "Floods across the coast; national red alert",
+   "text": "About 50 areas flooded in Guayaquil on 19 October; Tenguel among the worst hit. Since 29 August: 3 deaths and 23,167 people affected in 22 provinces.",
+   "source": "Xinhua",
+   "url": "https://english.news.cn/20261020/a6ce12e5375242c79d8120f34728d520/c.html",
+   "areas": [
+    "Guayas",
+    "El Oro",
+    "Los Rios",
+    "Esmeraldas",
+    "Manabi",
+    "Santa Elena",
+    "Bolivar"
+   ]
+  },
+  {
+   "id": "ecu-fires",
+   "iso": "ECU",
+   "type": "fire",
+   "severity": "orange",
+   "date": "2026-10-16",
+   "lat": -1.67,
+   "lng": -78.65,
+   "place": "Chimborazo, Tungurahua",
+   "title": "Wave of forest fires in the highlands",
+   "text": "Heat and drought are driving fires in the central Sierra.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html",
+   "areas": [
+    "Chimborazo",
+    "Tungurahua"
+   ]
+  },
+  {
+   "id": "per-coast-1019",
+   "iso": "PER",
+   "type": "flood",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": -4.9,
+   "lng": -80.7,
+   "place": "Tumbes, Piura",
+   "title": "“Extraordinary” El Niño: extreme rain expected",
+   "text": "The sea is 4.5 °C warmer than normal. The northern coast could get 250–300 mm of rain from December, where 20–30 mm is normal.",
+   "source": "Andina via Streamline Feed",
+   "url": "https://streamlinefeed.co.ke/news/perus-senamhi-warns-el-nino-entering-extraordinary-phase-with-extreme-rains",
+   "areas": [
+    "Tumbes",
+    "Piura",
+    "Lambayeque"
+   ]
+  },
+  {
+   "id": "per-water",
+   "iso": "PER",
+   "type": "drought",
+   "severity": "orange",
+   "date": "2026-10-16",
+   "lat": -13.5,
+   "lng": -72.0,
+   "place": "17 departments",
+   "title": "Water emergency in 707 districts",
+   "text": "State of emergency as reservoir levels fall in the Andes.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "per-anchovy",
+   "iso": "PER",
+   "type": "fisheries",
+   "severity": "orange",
+   "date": "2026-10-16",
+   "lat": -9.07,
+   "lng": -78.59,
+   "place": "North-central coast",
+   "title": "Anchovy fishing season suspended",
+   "text": "Unusually warm water pushed the government to suspend the first season.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "col-drought",
+   "iso": "COL",
+   "type": "drought",
+   "severity": "red",
+   "date": "2026-10-16",
+   "lat": 4.61,
+   "lng": -74.08,
+   "place": "Andean and Caribbean regions",
+   "title": "Drought, fires and water rationing",
+   "text": "About 4.3 million people exposed to supply cuts. Over 20,000 hectares burned. Hydropower reservoirs falling.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html",
+   "areas": [
+    "Bogota",
+    "Cundinamarca",
+    "Boyacá",
+    "Tolima",
+    "Huila",
+    "Santander"
+   ]
+  },
+  {
+   "id": "col-choco",
+   "iso": "COL",
+   "type": "flood",
+   "severity": "yellow",
+   "date": "2026-10-16",
+   "lat": 5.69,
+   "lng": -76.66,
+   "place": "Quibdó, Chocó",
+   "title": "Local river overflows on the Pacific side",
+   "text": "Flooding in Quibdó and rural Chocó; storm-surge alerts in Buenaventura.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "ven-hydro",
+   "iso": "VEN",
+   "type": "drought",
+   "severity": "orange",
+   "date": "2026-10-16",
+   "lat": 7.76,
+   "lng": -62.99,
+   "place": "Guri reservoir basin",
+   "title": "Low rivers threaten hydropower",
+   "text": "Reservoirs falling; risk to the power supply. Dengue and malaria cases rising.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "bra-rs",
+   "iso": "BRA",
+   "type": "flood",
+   "severity": "red",
+   "date": "2026-10-16",
+   "lat": -30.03,
+   "lng": -51.23,
+   "place": "Rio Grande do Sul",
+   "title": "Floods hit 146 municipalities",
+   "text": "More than 527,000 people affected, with deaths and thousands displaced.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "bra-amazon",
+   "iso": "BRA",
+   "type": "fire",
+   "severity": "red",
+   "date": "2026-10-16",
+   "lat": -3.12,
+   "lng": -60.02,
+   "place": "Amazonas",
+   "title": "Amazon fires up 253%",
+   "text": "Emergency in more than 36 municipalities; classes suspended in Manaus because of smoke.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "bol-santacruz",
+   "iso": "BOL",
+   "type": "flood",
+   "severity": "orange",
+   "date": "2026-10-16",
+   "lat": -16.8,
+   "lng": -63.4,
+   "place": "Santa Cruz (San Pedro)",
+   "title": "15,000 hectares of crops flooded",
+   "text": "River overflows in the eastern lowlands.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "pry-parana",
+   "iso": "PRY",
+   "type": "flood",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": -25.51,
+   "lng": -54.61,
+   "place": "Ciudad del Este, Alto Paraná",
+   "title": "About 1,000 families evacuated",
+   "text": "Paraná floods; Itaipú and Yacyretá open their gates.",
+   "source": "El Comercio",
+   "url": "https://elcomercio.pe/mundo/latinoamerica/fenomeno-el-nino-dos-muertos-por-inundaciones-en-el-noreste-de-argentina-rio-parana-paraguay-corrientes-chaco-entre-rios-ultimas-noticia/",
+   "areas": [
+    "Alto Paraná",
+    "Misiones",
+    "Ñeembucú"
+   ]
+  },
+  {
+   "id": "arg-corrientes",
+   "iso": "ARG",
+   "type": "flood",
+   "severity": "red",
+   "date": "2026-10-19",
+   "lat": -27.47,
+   "lng": -58.83,
+   "place": "Corrientes",
+   "title": "Two deaths as the Paraná rises",
+   "text": "Over 800 evacuated; Corrientes city, Paso de la Patria and Itatí at evacuation stage. Red alert in parts of Chaco.",
+   "source": "El Comercio",
+   "url": "https://elcomercio.pe/mundo/latinoamerica/fenomeno-el-nino-dos-muertos-por-inundaciones-en-el-noreste-de-argentina-rio-parana-paraguay-corrientes-chaco-entre-rios-ultimas-noticia/",
+   "areas": [
+    "Corrientes",
+    "Chaco"
+   ]
+  },
+  {
+   "id": "arg-paso-libres",
+   "iso": "ARG",
+   "type": "flood",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": -29.71,
+   "lng": -57.09,
+   "place": "Paso de los Libres, Corrientes",
+   "title": "Uruguay River above evacuation level",
+   "text": "Reached 8.81 m, above the 8.5 m evacuation mark.",
+   "source": "El Comercio",
+   "url": "https://elcomercio.pe/mundo/latinoamerica/fenomeno-el-nino-dos-muertos-por-inundaciones-en-el-noreste-de-argentina-rio-parana-paraguay-corrientes-chaco-entre-rios-ultimas-noticia/"
+  },
+  {
+   "id": "arg-concordia",
+   "iso": "ARG",
+   "type": "flood",
+   "severity": "orange",
+   "date": "2026-10-11",
+   "lat": -31.39,
+   "lng": -58.02,
+   "place": "Concordia and Colón, Entre Ríos",
+   "title": "Uruguay River expected above evacuation level",
+   "text": "Concordia could pass 13 m (evacuation level 12.5 m). Colón is close to its limit. Entre Ríos has been in water emergency since August.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/america/medio-ambiente/2026/10/11/alerta-por-el-nino-como-impacta-el-fenomeno-en-la-crecida-del-rio-uruguay-y-que-proyectan-en-el-parana/"
+  },
+  {
+   "id": "arg-iguazu",
+   "iso": "ARG",
+   "type": "flood",
+   "severity": "yellow",
+   "date": "2026-10-19",
+   "lat": -25.69,
+   "lng": -54.44,
+   "place": "Iguazú, Misiones",
+   "title": "Iguazú at ten times normal flow",
+   "text": "Walkways to the Devil's Throat closed since August.",
+   "source": "El Comercio",
+   "url": "https://elcomercio.pe/mundo/latinoamerica/fenomeno-el-nino-dos-muertos-por-inundaciones-en-el-noreste-de-argentina-rio-parana-paraguay-corrientes-chaco-entre-rios-ultimas-noticia/"
+  },
+  {
+   "id": "arg-ba-soils",
+   "iso": "ARG",
+   "type": "flood",
+   "severity": "yellow",
+   "date": "2026-10-14",
+   "lat": -35.5,
+   "lng": -61.5,
+   "place": "Western Buenos Aires province",
+   "title": "Saturated soils raise flood risk",
+   "text": "Soils are about 95% saturated; heavy rain can flood fields and rural roads.",
+   "source": "La Nación",
+   "url": "https://www.lanacion.com.ar/sociedad/super-nino-2026-en-la-argentina-asi-seria-el-impacto-en-el-pais-region-por-region-de-octubre-a-nid14102026/"
+  },
+  {
+   "id": "ury-border",
+   "iso": "URY",
+   "type": "flood",
+   "severity": "yellow",
+   "date": "2026-10-16",
+   "lat": -31.38,
+   "lng": -57.96,
+   "place": "Uruguay River",
+   "title": "Border crossings closed",
+   "text": "Precautionary closures of crossings with Argentina as the river rises.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html",
+   "areas": [
+    "Salto",
+    "Paysandú",
+    "Artigas"
+   ]
+  },
+  {
+   "id": "chl-central",
+   "iso": "CHL",
+   "type": "flood",
+   "severity": "yellow",
+   "date": "2026-10-16",
+   "lat": -33.45,
+   "lng": -70.67,
+   "place": "Central Chile",
+   "title": "Heavy rain and river surges",
+   "text": "Damage to infrastructure and road connections.",
+   "source": "Emol",
+   "url": "https://www.emol.com/noticias/Internacional/2026/10/16/1214258/el-nino-efectos-paises-sudamerica.html"
+  },
+  {
+   "id": "pan-canal",
+   "iso": "PAN",
+   "type": "shipping",
+   "severity": "orange",
+   "date": "2026-09-15",
+   "lat": 9.08,
+   "lng": -79.68,
+   "place": "Panama Canal",
+   "title": "Daily canal transits cut to 32",
+   "text": "Watershed rain 34% below average. National emergency declared; further cuts possible.",
+   "source": "Industrial Info",
+   "url": "https://www.industrialinfo.com/news/article/panama-canal-faces-growing-drought-and-transit-curtailments--362420"
+  },
+  {
+   "id": "hnd-drought",
+   "iso": "HND",
+   "type": "drought",
+   "severity": "red",
+   "date": "2026-09-28",
+   "lat": 13.3,
+   "lng": -87.19,
+   "place": "Dry Corridor",
+   "title": "Drought red alert in 103 municipalities",
+   "text": "233 of 298 municipalities under some drought alert. Severe crop losses and water shortages.",
+   "source": "La Tribuna",
+   "url": "https://www.latribuna.hn/2026/09/28/advierten-que-corredor-seco-volvera-a-enfrentar-sequia-al-cierre-de-octubre/",
+   "areas": [
+    "Choluteca",
+    "Valle",
+    "La Paz",
+    "Comayagua",
+    "Francisco Morazán",
+    "El Paraíso"
+   ]
+  },
+  {
+   "id": "slv-drought",
+   "iso": "SLV",
+   "type": "drought",
+   "severity": "red",
+   "date": "2026-08-31",
+   "lat": 13.69,
+   "lng": -89.19,
+   "place": "Nationwide",
+   "title": "National red alert for drought",
+   "text": "Harvests and day-labour income hit hardest, according to Oxfam.",
+   "source": "Bloomberg Línea",
+   "url": "https://www.bloomberglinea.com/latinoamerica/fenomeno-de-el-nino-2026-mapa-de-los-paises-mas-afectados-y-las-medidas-anunciadas/",
+   "areas": [
+    "*"
+   ]
+  },
+  {
+   "id": "gtm-drought",
+   "iso": "GTM",
+   "type": "drought",
+   "severity": "orange",
+   "date": "2026-09-07",
+   "lat": 14.8,
+   "lng": -89.54,
+   "place": "Dry Corridor",
+   "title": "Crop losses and poor water access",
+   "text": "Among the most severe impacts in the region, alongside Honduras.",
+   "source": "Bloomberg Línea",
+   "url": "https://www.bloomberglinea.com/latinoamerica/fenomeno-de-el-nino-2026-mapa-de-los-paises-mas-afectados-y-las-medidas-anunciadas/",
+   "areas": [
+    "Chiquimula",
+    "Zacapa",
+    "Jalapa",
+    "Jutiapa",
+    "El Progreso"
+   ]
+  },
+  {
+   "id": "idn-kalimantan",
+   "iso": "IDN",
+   "type": "fire",
+   "severity": "red",
+   "date": "2026-10-18",
+   "lat": -2.21,
+   "lng": 113.92,
+   "place": "Central Kalimantan",
+   "title": "Months-long peat fires spread haze",
+   "text": "Fires in Borneo and South Sumatra; over 200,000 hectares burned. Tens of thousands of people ill.",
+   "source": "France 24",
+   "url": "https://www.france24.com/en/asia-pacific/20261018-months-long-indonesia-wildfires-spew-toxic-haze-across-southeast-asia",
+   "areas": [
+    "Kalimantan Tengah",
+    "Kalimantan Barat",
+    "Kalimantan Selatan"
+   ]
+  },
+  {
+   "id": "idn-sumatra",
+   "iso": "IDN",
+   "type": "fire",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": -3.3,
+   "lng": 104.6,
+   "place": "Ogan Ilir, South Sumatra",
+   "title": "Peatland fires in South Sumatra",
+   "text": "Drained peat and dry weather keep fires burning.",
+   "source": "Preda Foundation",
+   "url": "https://www.preda.org/el-nino-deepens-regional-strain-as-southeast-asia-battles-fires-and-power-risks/"
+  },
+  {
+   "id": "idn-dry",
+   "iso": "IDN",
+   "type": "drought",
+   "severity": "yellow",
+   "date": "2026-09-30",
+   "lat": -7.9,
+   "lng": 110.36,
+   "place": "Java and 25 provinces",
+   "title": "Over 60 days without rain in 25 provinces",
+   "text": "Longest dry spell: 131 days in Bantul. Rainy season delayed across 61% of the country.",
+   "source": "IDN Financials",
+   "url": "https://www.idnfinancials.com/news/69240/bmkg-predicts-longer-dry-season-and-delayed-start-to-rainy-season",
+   "areas": [
+    "Yogyakarta",
+    "Jawa Tengah",
+    "Jawa Timur",
+    "Nusa Tenggara Timur"
+   ]
+  },
+  {
+   "id": "mys-haze",
+   "iso": "MYS",
+   "type": "haze",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": 1.55,
+   "lng": 110.34,
+   "place": "Sarawak and other states",
+   "title": "Schools closed because of haze",
+   "text": "Emergency declared in Sarawak in September; asthma cases up 259% in late August.",
+   "source": "Preda Foundation",
+   "url": "https://www.preda.org/el-nino-deepens-regional-strain-as-southeast-asia-battles-fires-and-power-risks/",
+   "areas": [
+    "Sarawak",
+    "Johor",
+    "Selangor",
+    "Kuala Lumpur"
+   ]
+  },
+  {
+   "id": "sgp-haze",
+   "iso": "SGP",
+   "type": "haze",
+   "severity": "yellow",
+   "date": "2026-10-19",
+   "lat": 1.35,
+   "lng": 103.82,
+   "place": "Singapore",
+   "title": "Subsidies for haze-related illness",
+   "text": "The government covers treatment costs as smoke drifts in.",
+   "source": "Preda Foundation",
+   "url": "https://www.preda.org/el-nino-deepens-regional-strain-as-southeast-asia-battles-fires-and-power-risks/",
+   "areas": [
+    "*"
+   ]
+  },
+  {
+   "id": "phl-drought",
+   "iso": "PHL",
+   "type": "drought",
+   "severity": "yellow",
+   "date": "2026-10-06",
+   "lat": 15.48,
+   "lng": 120.6,
+   "place": "Nationwide",
+   "title": "Every province expected in drought by March",
+   "text": "Rainfall 40–80% below normal through May. The government is preparing for power strain and lower hydropower.",
+   "source": "Asia News Network",
+   "url": "https://asianews.network/el-nino-to-put-all-philippine-provinces-under-drought-by-march-2027-government-warns/"
+  },
+  {
+   "id": "mmr-heat",
+   "iso": "MMR",
+   "type": "heat",
+   "severity": "orange",
+   "date": "2026-10-19",
+   "lat": 16.84,
+   "lng": 96.17,
+   "place": "Nationwide",
+   "title": "Unseasonal heat and power cuts",
+   "text": "Warnings of outages, drought and drinking-water shortages.",
+   "source": "Preda Foundation",
+   "url": "https://www.preda.org/el-nino-deepens-regional-strain-as-southeast-asia-battles-fires-and-power-risks/"
+  },
+  {
+   "id": "vnm-water",
+   "iso": "VNM",
+   "type": "drought",
+   "severity": "yellow",
+   "date": "2026-09-26",
+   "lat": 10.03,
+   "lng": 105.78,
+   "place": "Mekong Delta and Central Highlands",
+   "title": "Fill reservoirs now, authorities urge",
+   "text": "Rainy-season rainfall 20–40% below normal; saltwater intrusion expected Feb–Apr 2027.",
+   "source": "Viet Nam News",
+   "url": "https://vietnamnews.vn/environment/1800491/viet-nam-braces-for-long-uncertain-el-ni-o.html"
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026-06-11",
+   "kind": "past",
+   "title": "El Niño declared",
+   "text": "US forecasters (NOAA) confirm El Niño has formed in the Pacific.",
+   "zone": null
+  },
+  {
+   "date": "2026-08-19",
+   "kind": "past",
+   "title": "Drought alerts in Central America",
+   "text": "Honduras and El Salvador issue red alerts for drought.",
+   "zone": "hnd-corridor"
+  },
+  {
+   "date": "2026-08-29",
+   "kind": "past",
+   "title": "Ecuador: national red alert",
+   "text": "Weeks of rain on the coast trigger the national alert.",
+   "zone": "ecu-coast"
+  },
+  {
+   "date": "2026-09-05",
+   "kind": "past",
+   "title": "Haze emergency in Sarawak",
+   "text": "Smoke from Indonesian fires; top-level regional haze alert.",
+   "zone": "mys-haze"
+  },
+  {
+   "date": "2026-09-15",
+   "kind": "past",
+   "title": "Panama Canal cuts traffic",
+   "text": "Daily transits cut to 32 as reservoirs run low.",
+   "zone": "pan-canal"
+  },
+  {
+   "date": "2026-10-19",
+   "kind": "past",
+   "title": "Deadly floods in Corrientes",
+   "text": "The Paraná and Uruguay rivers flood; evacuations in Argentina and Paraguay.",
+   "zone": "arg-litoral"
+  },
+  {
+   "date": "2026-10-20",
+   "kind": "now",
+   "title": "Today",
+   "text": "El Niño is still strengthening.",
+   "zone": null
+  },
+  {
+   "date": "2026-11-20",
+   "kind": "next",
+   "title": "Paraná crest at Corrientes",
+   "text": "Forecast peak near 6 m.",
+   "zone": "arg-litoral"
+  },
+  {
+   "date": "2026-11-25",
+   "kind": "next",
+   "title": "Heaviest rain on Ecuador's coast",
+   "text": "INAMHI expects the most intense rain in Nov–Dec.",
+   "zone": "ecu-coast"
+  },
+  {
+   "date": "2026-12-01",
+   "kind": "next",
+   "title": "Extreme rain starts in northern Peru",
+   "text": "250–300 mm expected where 20–30 mm is normal.",
+   "zone": "per-north"
+  },
+  {
+   "date": "2026-12-10",
+   "kind": "next",
+   "title": "Indonesia's rains arrive",
+   "text": "Late rainy season should end the fires; watch for floods.",
+   "zone": "idn-fires"
+  },
+  {
+   "date": "2026-12-15",
+   "kind": "next",
+   "title": "El Niño peaks",
+   "text": "Strongest point expected between November and January.",
+   "zone": null
+  },
+  {
+   "date": "2026-12-20",
+   "kind": "next",
+   "title": "Colombia's driest stretch",
+   "text": "Worst rain deficit and highest risk of water rationing.",
+   "zone": "col-andes"
+  },
+  {
+   "date": "2027-01-15",
+   "kind": "next",
+   "title": "Panama dry season",
+   "text": "Possible further canal cuts and water restrictions.",
+   "zone": "pan-canal"
+  },
+  {
+   "date": "2027-02-01",
+   "kind": "next",
+   "title": "Worst flood season in Argentina's Litoral",
+   "text": "Jan–Apr is when past strong El Niños caused the biggest floods.",
+   "zone": "arg-litoral"
+  },
+  {
+   "date": "2027-02-15",
+   "kind": "next",
+   "title": "Salt water in the Mekong Delta",
+   "text": "Saltwater intrusion expected Feb–Apr.",
+   "zone": "vnm-south"
+  },
+  {
+   "date": "2027-03-31",
+   "kind": "next",
+   "title": "Drought across the Philippines",
+   "text": "Every province expected to be dry or in drought.",
+   "zone": "phl-luzon"
+  },
+  {
+   "date": "2027-04-15",
+   "kind": "next",
+   "title": "Extreme heat in Southeast Asia",
+   "text": "Heat index up to 52–55 °C in the Philippines; 40 °C in Malaysia.",
+   "zone": "phl-rest"
+  }
+ ]
+}
